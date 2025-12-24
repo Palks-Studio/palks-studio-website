@@ -8,6 +8,7 @@
 │   ├── studio.html                          → Présentation de Palks Studio
 │   ├── approche.html                        → Approche et principes de travail
 │   ├── ressources.html                      → Ressources techniques
+│   ├── static-site.html                     → Socle de site statique
 │   ├── chatbot-flask.html                   → Chatbot Flask auto-hébergé
 │   ├── documentation_sans_dependances.html  → Documentation sans dépendances inutiles
 │   ├── fondations.html                      → Fondations techniques
@@ -23,6 +24,7 @@
 │   ├── studio.html                          → Studio overview
 │   ├── approach.html                        → Method & principles
 │   ├── resources.html                       → Technical resources
+│   ├── static-site.html                     → Professional static foundation
 │   ├── flask-chatbot.html                   → Self-hosted Flask chatbot
 │   ├── no-unnecessary-dependencies.html     → Documentation without unnecessary dependencies
 │   ├── foundations.html                     → Technical foundations
