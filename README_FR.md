@@ -4,7 +4,7 @@
 
 > 🇫🇷 Français | [🇬🇧 English](./README.md)
 
-![License](https://img.shields.io/badge/License-LICENSE_EN.md-lightgreen.svg)
+![License](https://img.shields.io/badge/License-LICENSE.md-lightgreen.svg)
 
 # Palks Studio — Vitrine publique
 
@@ -117,7 +117,5 @@ Ce dépôt participe à cette démarche de transparence.
 
 ---
 
-## Licence
-
-© Palks Studio — voir LICENCE_FR.md  
+© Palks Studio — voir LICENSE.md  
 - https://palks-studio.com
