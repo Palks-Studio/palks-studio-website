@@ -1,5 +1,5 @@
 ```
-/palksstudio_website/
+/palks_studio_website/
 │
 ├── index.html                               → Landing neutre, choix de langue (FR) / Neutral entry, language selector (EN)
 │
