@@ -37,8 +37,6 @@ The focus is placed on:
 
 ## Repository contents
 
-This repository includes:  
-
 ### 1. The Palks Studio website (public version)
 
 The website pages present:  
