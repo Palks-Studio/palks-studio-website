@@ -53,12 +53,13 @@ L’accent est mis sur :
 ## Structure du projet
 
 ```
-/palks-studio_website/
+/palks-studio/
 │
 ├── index.html                               → Landing neutre, choix de langue (FR) / Neutral entry, language selector (EN)
 │
 ├── fr/
 │   ├── index.html                           → Accueil principal
+│   ├── facturation-batch.html               → Page de présentation du service de facturation batch
 │   ├── studio.html                          → Présentation de Palks Studio
 │   ├── approche.html                        → Approche et principes de travail
 │   ├── ressources.html                      → Ressources techniques
@@ -76,6 +77,7 @@ L’accent est mis sur :
 │
 ├── en/
 │   ├── index.html                           → Home page
+│   ├── batch-invoicing.html                 → Service page for batch invoicing
 │   ├── studio.html                          → Studio overview
 │   ├── approach.html                        → Method & principles
 │   ├── resources.html                       → Technical resources
@@ -98,9 +100,6 @@ L’accent est mis sur :
 │
 ├── LICENCE.md                               → Conditions d’utilisation et cadre légal (FR)
 ├── LICENSE.md                               → Terms of use and legal Framework (EN)
-│
-├── README_FR.md                             → Documentation générale du système (FR)
-├── README.md                                → General system documentation (EN)
 │
 ├── downloads_tokens/
 │   ├── downloads.log                        → Journal des téléchargements réels (FR) / Download activity log (EN)
@@ -149,11 +148,16 @@ Les pages du site présentent :
 
 Le site est volontairement sobre, statique et lisible côté navigateur.  
 Il sert à la fois de vitrine de la démarche Palks Studio et de point d’entrée  
-vers la vente et la distribution de produits numériques.
+vers la vente et la distribution de produits numériques et également de vitrine au service de facturation batch mensuelle opéré via Althemia.
 
 Côté serveur, le site s’appuie sur un pipeline minimal :  
 `Stripe → Webhook → Facture PDF → Token sécurisé → Téléchargement`,  
 sans CMS et sans base de données.
+
+**Note — Facturation batch**  
+En complément du flux Stripe unitaire, Palks Studio (via Althemia) propose  
+un service mensuel basé sur l’envoi d’un CSV unique, la génération des factures PDF  
+du mois N-1 et la livraison d’un ZIP structuré, avec archivage traçable sur demande.
 
 ---
 
