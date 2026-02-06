@@ -128,7 +128,7 @@ L’accent est mis sur :
 │   ├── PROJECT-OVERVIEW.md                  → Project Overview (EN)
 │   │ 
 │   ├── README_FR.md                         → Présentation générale (FR)
-│   └── README.md                             → General Overview (EN)
+│   └── README.md                            → General Overview (EN)
 │
 ├── products/
 │   └── (store files)                        → Fichiers produits numériques (FR) / Digital product files (EN)
