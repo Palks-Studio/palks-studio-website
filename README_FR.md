@@ -53,13 +53,13 @@ L’accent est mis sur :
 ## Structure du projet
 
 ```
-/palks-studio/
+/palks-studio-website/
 │
 ├── index.html                               → Landing neutre, choix de langue (FR) / Neutral entry, language selector (EN)
 │
 ├── fr/
 │   ├── index.html                           → Accueil principal
-│   ├── facturation-batch.html               → Page de présentation du service de facturation batch
+│   ├── services.html                        → Page de présentation des services
 │   ├── studio.html                          → Présentation de Palks Studio
 │   ├── approche.html                        → Approche et principes de travail
 │   ├── ressources.html                      → Ressources techniques
@@ -77,7 +77,7 @@ L’accent est mis sur :
 │
 ├── en/
 │   ├── index.html                           → Home page
-│   ├── batch-invoicing.html                 → Service page for batch invoicing
+│   ├── services.html                        → Services page
 │   ├── studio.html                          → Studio overview
 │   ├── approach.html                        → Method & principles
 │   ├── resources.html                       → Technical resources
@@ -120,16 +120,45 @@ L’accent est mis sur :
 │   ├── lib_*.php                            → Génération PDF via DomPDF (FR) / PDF generation via DomPDF (EN)
 │   └── template_invoice.html                → Template HTML de facture (FR) / Invoice HTML template (EN)
 │
+├── docs/
+│   ├── VUE_D_ENSEMBLE.md                    → Vue d’ensemble du système (FR)
+│   ├── OVERVIEW.md                          → System Overview (EN)
+│   │ 
+│   ├── PROJECT-OVERVIEW_FR.md               → Vue d’ensemble du projet (FR)
+│   ├── PROJECT-OVERVIEW.md                  → Project Overview (EN)
+│   │ 
+│   ├── README_FR.md                         → Présentation générale (FR)
+│   └── README.md                             → General Overview (EN)
+│
 ├── products/
 │   └── (store files)                        → Fichiers produits numériques (FR) / Digital product files (EN)
 │
 └── endpoint/
-    ├── endpoint_checkout.php                → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
-    ├── endpoint_payment.php                 → Traitement des événements de paiement (FR) / Payment event handler (EN)
-    ├── endpoint_delivery.php                → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
-    └── endpoint_access.php                  → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
+    ├── endpoint_a.php                       → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
+    ├── endpoint_b.php                       → Traitement des événements de paiement (FR) / Payment event handler (EN)
+    ├── endpoint_c.php                       → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
+    └── endpoint_d.php                       → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
 ```
 
+
+---
+
+## Architecture (résumé)
+
+Le système repose sur une architecture volontairement minimale :  
+
+- Frontend statique (HTML/CSS)  
+- Endpoints PHP côté serveur  
+- Stockage fichiers plats (JSON / CSV)  
+- Stripe comme processeur de paiement  
+- Aucune base de données
+
+Objectifs techniques :  
+
+- comportement déterministe  
+- traçabilité des opérations  
+- dépendances minimales  
+- maintenabilité long terme
 
 ---
 
@@ -198,6 +227,18 @@ et usage unique, journalisé côté serveur.
 - Un espace de support ou de mises à jour contractuelles  
 
 Les clés, secrets et certains chemins de production ne sont pas exposés ici.
+
+---
+
+## Principes de conception
+
+Palks Studio repose sur quelques principes constants :  
+
+- simplicité fonctionnelle  
+- maîtrise des dépendances  
+- transparence technique  
+- lisibilité du code et des structures  
+- stabilité dans le temps plutôt que complexité
 
 ---
 
