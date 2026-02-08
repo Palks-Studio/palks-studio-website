@@ -267,12 +267,5 @@ Ce dépôt participe pleinement à cette démarche de transparence.
 
 ---
 
-## Langues
-
-- Français (référence)  
-- Anglais (README séparé)
-
----
-
 © Palks Studio — voir LICENSE.md  
 - https://palks-studio.com
