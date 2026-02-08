@@ -1,10 +1,18 @@
 <p align="center">
-  <img src="docs/images/Palks_Studio.png" alt="Palks Studio">
+  <img src="docs/images/palks_studio_en.png"
+       alt="Palks Studio homepage — static-first development and automation services overview"
+       width="1200">
 </p>
 
 > 🇫🇷 Français | [🇬🇧 English](./README.md)
 
 ![License](https://img.shields.io/badge/License-LICENSE.md-lightgreen.svg)
+
+<p align="center">
+  <a href="https://palks-studio.com">
+    <img src="https://img.shields.io/badge/Palks%20Studio-Website-0095b1?style=for-the-badge" />
+  </a>
+</p>
 
 # Palks Studio — Site statique + boutique numérique  
 
