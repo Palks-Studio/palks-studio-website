@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="docs/images/Palks_Studio.png" alt="Palks Studio">
+  <img src="docs/images/palks_studio_en.png"
+       alt="Palks Studio homepage — static-first development and automation services overview"
+       width="1200">
 </p>
 
 > 🇬🇧 English | [🇫🇷 Français](./README_FR.md)
