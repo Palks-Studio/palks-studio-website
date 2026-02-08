@@ -8,6 +8,12 @@
 
 ![License](https://img.shields.io/badge/License-LICENSE.md-lightgreen.svg)
 
+<p align="center">
+  <a href="https://palks-studio.com">
+    <img src="https://img.shields.io/badge/Palks%20Studio-Website-0095b1?style=for-the-badge" />
+  </a>
+</p>
+
 # Palks Studio — Static site + digital storefront  
 
 This repository contains the public website of Palks Studio, which combines:  
