@@ -268,12 +268,5 @@ This repository fully participates in this transparency approach.
 
 ---
 
-## Languages
-
-- French (reference)  
-- English (separate README)
-
----
-
 © Palks Studio — see LICENSE.md  
 - https://palks-studio.com
