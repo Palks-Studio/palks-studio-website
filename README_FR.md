@@ -16,6 +16,9 @@
 
 # Palks Studio — Site statique + boutique numérique  
 
+> Ce dépôt constitue une présentation technique et une documentation du projet.  
+> Il ne contient pas de code source téléchargeable ni de fichiers de production.
+
 Ce dépôt contient le site public de **Palks Studio**, qui combine :  
 
 - un site statique en HTML, sobre et sans tracking  
