@@ -80,7 +80,7 @@ The emphasis is placed on:
 │   ├── static-site.html                     → Socle de site statique
 │   ├── chatbot-flask.html                   → Chatbot Flask auto-hébergé
 │   ├── framework-documentation.html         → Framework de documentation
-│   ├── pack-formatage-vscode.html           → Pack de formatage VS Code
+│   ├── pack-environnement-vscode.html       → Pack environnement VS Code
 │   ├── liens.html                           → Liens, ressources, produits
 │   ├── mentions-legales.html                → Mentions légales (FR) / Legal notice (EN)
 │   ├── contact.html                         → Page de contact
@@ -98,7 +98,7 @@ The emphasis is placed on:
 │   ├── static-site.html                     → Professional static foundation
 │   ├── flask-chatbot.html                   → Self-hosted Flask chatbot
 │   ├── documentation-framework.html         → Documentation framework
-│   ├── vscode-formatting-pack.html          → VS Code formatting pack
+│   ├── vscode-environment-pack.html         → VS Code environment pack
 │   ├── links.html                           → Links & resources
 │   ├── contact.html                         → Contact page
 │   ├── faq.html                             → Frequently Asked Questions
