@@ -19,6 +19,9 @@
 
 # Palks Studio — Static site + digital storefront  
 
+> This repository is a technical presentation and documentation repository.  
+> It does not contain downloadable source code or production files.
+
 This repository contains the public website of Palks Studio, which combines:  
 
 - a clean, tracking-free static HTML website  
