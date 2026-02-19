@@ -77,6 +77,8 @@ L’accent est mis sur :
 │   ├── studio.html                          → Présentation de Palks Studio
 │   ├── approche.html                        → Approche et principes de travail
 │   ├── ressources.html                      → Ressources techniques
+│   ├── notes-techniques.html                → Notes techniques
+│   │                                        *Pages de Notes techniques
 │   ├── static-site.html                     → Socle de site statique
 │   ├── chatbot-flask.html                   → Chatbot Flask auto-hébergé
 │   ├── framework-documentation.html         → Framework de documentation
@@ -95,6 +97,8 @@ L’accent est mis sur :
 │   ├── studio.html                          → Studio overview
 │   ├── approach.html                        → Method & principles
 │   ├── resources.html                       → Technical resources
+│   ├── technical-notes.html                 → Technical notes
+│   │                                        * Technical notes pages
 │   ├── static-site.html                     → Professional static foundation
 │   ├── flask-chatbot.html                   → Self-hosted Flask chatbot
 │   ├── documentation-framework.html         → Documentation framework
@@ -186,8 +190,9 @@ Les pages du site présentent :
 - les ressources proposées  
 - les fondations conceptuelles  
 - les outils techniques développés  
+- les notes techniques et réflexions d’ingénierie  
 - les pages légales et informatives  
-- ainsi que l’accès à la boutique numérique  
+- ainsi que l’accès à la boutique numérique
 
 Le site est volontairement sobre, statique et lisible côté navigateur.  
 Il sert à la fois de vitrine de la démarche Palks Studio et de point d’entrée  
@@ -196,11 +201,6 @@ vers la vente et la distribution de produits numériques et également de vitrin
 Côté serveur, le site s’appuie sur un pipeline minimal :  
 `Stripe → Webhook → Facture PDF → Token sécurisé → Téléchargement`,  
 sans CMS et sans base de données.
-
-**Note — Facturation batch**  
-En complément du flux Stripe unitaire, Palks Studio (via Althemia) propose  
-un service mensuel basé sur l’envoi d’un CSV unique, la génération des factures PDF  
-du mois N-1 et la livraison d’un ZIP structuré, avec archivage traçable sur demande.
 
 ---
 
