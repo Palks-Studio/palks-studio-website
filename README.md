@@ -19,9 +19,6 @@
 
 # Palks Studio — Static site + digital storefront  
 
-> This repository is a technical presentation and documentation repository.  
-> It does not contain downloadable source code or production files.
-
 This repository contains the public website of Palks Studio, which combines:  
 
 - a clean, tracking-free static HTML website  
@@ -77,6 +74,8 @@ The emphasis is placed on:
 │   ├── studio.html                          → Présentation de Palks Studio
 │   ├── approche.html                        → Approche et principes de travail
 │   ├── ressources.html                      → Ressources techniques
+│   ├── notes-techniques.html                → Notes techniques
+│   │                                        *Pages de Notes techniques
 │   ├── static-site.html                     → Socle de site statique
 │   ├── chatbot-flask.html                   → Chatbot Flask auto-hébergé
 │   ├── framework-documentation.html         → Framework de documentation
@@ -95,6 +94,8 @@ The emphasis is placed on:
 │   ├── studio.html                          → Studio overview
 │   ├── approach.html                        → Method & principles
 │   ├── resources.html                       → Technical resources
+│   ├── technical-notes.html                 → Technical notes
+│   │                                        * Technical notes pages
 │   ├── static-site.html                     → Professional static foundation
 │   ├── flask-chatbot.html                   → Self-hosted Flask chatbot
 │   ├── documentation-framework.html         → Documentation framework
@@ -183,11 +184,12 @@ Design goals:
 The site pages present:  
 
 - the studio and its approach  
-- the resources offered  
+- the available resources  
 - the conceptual foundations  
 - the technical tools developed  
-- legal and informational pages  
-- as well as access to the digital storefront
+- the technical notes and engineering reflections  
+- the legal and informational pages  
+- as well as access to the digital store
 
 The site is intentionally sober, static, and readable on the client side.  
 It serves both as a showcase of the Palks Studio approach and as an entry point for the sale and distribution of digital products,  
@@ -196,11 +198,6 @@ as well as a showcase for the monthly batch invoicing service operated via Althe
 On the server side, the site relies on a minimal pipeline:  
 `Stripe → Webhook → PDF Invoice → Secure Token → Download`,  
 with no CMS and no database.
-
-**Note — Batch invoicing**
-In addition to the unit-based Stripe flow, Palks Studio (via Althemia) offers  
-a monthly service based on the submission of a single CSV file, the generation of PDF invoices for month N-1,  
-and the delivery of a structured ZIP file, with traceable archiving available on request.
 
 ---
 
