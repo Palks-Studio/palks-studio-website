@@ -69,93 +69,101 @@ The emphasis is placed on:
 ```
 /palks-studio-website/
 │
-├── index.html                               → Landing neutre, choix de langue (FR) / Neutral entry, language selector (EN)
+├── index.html                                → Landing neutre, choix de langue (FR) / Neutral entry, language selector (EN)
+├── generate-contract.php                     → Backend génération PDF (FR) / PDF generation backend (EN)
+├── upload-batch.php                          → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
 │
 ├── fr/
-│   ├── index.html                           → Accueil principal
-│   ├── services.html                        → Page de présentation des services
-│   ├── studio.html                          → Présentation de Palks Studio
-│   ├── approche.html                        → Approche et principes de travail
-│   ├── ressources.html                      → Ressources techniques
-│   ├── notes-techniques.html                → Notes techniques
-│   │                                        *Pages de Notes techniques
-│   ├── static-site.html                     → Socle de site statique
-│   ├── chatbot-flask.html                   → Chatbot Flask auto-hébergé
-│   ├── framework-documentation.html         → Framework de documentation
-│   ├── pack-environnement-vscode.html       → Pack environnement VS Code
-│   ├── liens.html                           → Liens, ressources, produits
-│   ├── mentions-legales.html                → Mentions légales (FR) / Legal notice (EN)
-│   ├── contact.html                         → Page de contact
-│   ├── cgv.html                             → Conditions générales de vente
-│   ├── faq.html                             → Foire aux questions
-│   └── politique-confidentialite.html       → Politique de confidentialité (FR) / Privacy policy (EN)
+│   ├── index.html                            → Accueil principal
+│   ├── services.html                         → Page de présentation des services
+│   ├── studio.html                           → Présentation de Palks Studio
+│   ├── approche.html                         → Approche et principes de travail
+│   ├── ressources.html                       → Ressources techniques
+│   ├── static-site.html                      → Socle de site statique
+│   ├── chatbot-flask.html                    → Chatbot Flask auto-hébergé
+│   ├── framework-documentation.html          → Framework de documentation
+│   ├── pack-environnement-vscode.html        → Pack environnement VS Code
+│   ├── liens.html                            → Liens, ressources, produits
+│   ├── mentions-legales.html                 → Mentions légales (FR) / Legal notice (EN)
+│   ├── contact.html                          → Page de contact
+│   ├── facturation-batch-facturx.html        → Service de facturation batch Factur-X
+│   ├── notes-techniques.html*                → Notes techniques
+│   ├── cgv.html                              → Conditions générales de vente
+│   ├── faq.html                              → Foire aux questions
+│   └── politique-confidentialite.html        → Politique de confidentialité (FR) / Privacy policy (EN)
 │
 │
 ├── en/
-│   ├── index.html                           → Home page
-│   ├── services.html                        → Services page
-│   ├── studio.html                          → Studio overview
-│   ├── approach.html                        → Method & principles
-│   ├── resources.html                       → Technical resources
-│   ├── technical-notes.html                 → Technical notes
-│   │                                        * Technical notes pages
-│   ├── static-site.html                     → Professional static foundation
-│   ├── flask-chatbot.html                   → Self-hosted Flask chatbot
-│   ├── documentation-framework.html         → Documentation framework
-│   ├── vscode-environment-pack.html         → VS Code environment pack
-│   ├── links.html                           → Links & resources
-│   ├── contact.html                         → Contact page
-│   ├── faq.html                             → Frequently Asked Questions
-│   └── terms.html                           → Terms and Conditions
+│   ├── index.html                            → Home page
+│   ├── services.html                         → Services page
+│   ├── studio.html                           → Studio overview
+│   ├── approach.html                         → Method & principles
+│   ├── resources.html                        → Technical resources
+│   ├── static-site.html                      → Professional static foundation
+│   ├── flask-chatbot.html                    → Self-hosted Flask chatbot
+│   ├── documentation-framework.html          → Documentation framework
+│   ├── vscode-environment-pack.html          → VS Code environment pack
+│   ├── links.html                            → Links & resources
+│   ├── contact.html                          → Contact page
+│   ├── batch-invoicing-facturx.html          → Factur-X batch billing service
+│   ├── technical-notes.html*                 → Technical notes
+│   ├── faq.html                              → Frequently Asked Questions
+│   └── terms.html                            → Terms and Conditions
 │
 ├── assets/
 │   ├── css/
-│   │   └── style.css                        → Global stylesheet (FR) / Feuille de styles globale (EN)
-│   └── img/                                 → Images et visuels (FR) / Images and visuals (EN)
+│   │   └── style.css                         → Global stylesheet (FR) / Feuille de styles globale (EN)
+│   └── img/                                  → Images et visuels (FR) / Images and visuals (EN)
 │
-├── robots.txt                               → Règles pour moteurs de recherche (FR) / Search engine directives (EN)
-├── sitemap.xml                              → Plan du site pour indexation (FR) / Sitemap for indexing (EN)
+├── robots.txt                                → Règles pour moteurs de recherche (FR) / Search engine directives (EN)
+├── sitemap.xml                               → Plan du site pour indexation (FR) / Sitemap for indexing (EN)
 │
-├── LICENCE.md                               → Conditions d’utilisation et cadre légal (FR)
-├── LICENSE.md                               → Terms of use and legal Framework (EN)
+├── LICENCE.md                                → Conditions d’utilisation et cadre légal (FR)
+├── LICENSE.md                                → Terms of use and legal Framework (EN)
 │
 ├── downloads_tokens/
-│   ├── downloads.log                        → Journal des téléchargements réels (FR) / Download activity log (EN)
-│   ├── security.log                         → Journal des accès sécurisés aux fichiers (FR) / Secure download access log (EN)
-│   └── tokens.json                          → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
+│   ├── downloads.log                         → Journal des téléchargements réels (FR) / Download activity log (EN)
+│   ├── security.log                          → Journal des accès sécurisés aux fichiers (FR) / Secure download access log (EN)
+│   └── tokens.json                           → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
 │
 ├── config/
-│   └── download.php                         → Configuration centrale des téléchargements (FR) / Central download configuration (EN)
+│   └── download.php                          → Configuration centrale des téléchargements (FR) / Central download configuration (EN)
 │
 ├── library/
-│   ├── cancel.html                          → Page d’annulation de paiement (FR)/ Payment cancellation page (EN)
-│   ├── success.html                         → Page de paiement validé (FR) / Payment success page (EN)
-│   ├── counter.json                         → Compteur persistant de factures (FR) / Persistent invoice counter (EN)
-│   ├── get_counter.php                      → Lecture sécurisée du compteur de factures (FR) / Secure invoice counter reader (EN)
-│   ├── lib_*.php                            → Incrémentation atomique du numéro de facture (FR) / Secure invoice counter reader (EN)
-│   ├── lib_*.php                            → Génération HTML des factures (FR) / Atomic invoice number increment (EN)
-│   ├── lib_*.php                            → Envoi e-mails transactionnels (FR) / Transactional email delivery (EN)
-│   ├── lib_*.php                            → Génération PDF via DomPDF (FR) / PDF generation via DomPDF (EN)
-│   └── template_invoice.html                → Template HTML de facture (FR) / Invoice HTML template (EN)
+│   ├── contact-contrat-fr.html               → Génération contrat + configuration client (FR)
+│   ├── contact-contrat-en.html               → Contract + client configuration generation (EN)
+│   ├── contrat-template-fr.html              → Template de contrat (FR)
+│   ├── contrat-template-en.html              → Contract template (EN)
+│   ├── upload-batch-fr.html                  → Formulaire d’envoi CSV client (FR)
+│   ├── upload-batch-en.html                  → Client CSV upload form (EN)
+│   ├── cancel.html                           → Page d’annulation de paiement (FR)/ Payment cancellation page (EN)
+│   ├── success.html                          → Page de paiement validé (FR) / Payment success page (EN)
+│   ├── counter.json                          → Compteur persistant de factures (FR) / Persistent invoice counter (EN)
+│   ├── get_counter.php                       → Lecture sécurisée du compteur de factures (FR) / Secure invoice counter reader (EN)
+│   ├── lib_*.php                             → Incrémentation atomique du numéro de facture (FR) / Secure invoice counter reader (EN)
+│   ├── lib_*.php                             → Génération HTML des factures (FR) / Atomic invoice number increment (EN)
+│   ├── lib_*.php                             → Envoi e-mails transactionnels (FR) / Transactional email delivery (EN)
+│   ├── lib_*.php                             → Génération PDF via DomPDF (FR) / PDF generation via DomPDF (EN)
+│   └── template_invoice.html                 → Template HTML de facture (FR) / Invoice HTML template (EN)
 │
 ├── docs/
-│   ├── VUE_D_ENSEMBLE.md                    → Vue d’ensemble du système (FR)
-│   ├── OVERVIEW.md                          → System Overview (EN)
+│   ├── VUE_D_ENSEMBLE.md                     → Vue d’ensemble du système (FR)
+│   ├── OVERVIEW.md                           → System Overview (EN)
 │   │ 
-│   ├── PROJECT-OVERVIEW_FR.md               → Vue d’ensemble du projet (FR)
-│   ├── PROJECT-OVERVIEW.md                  → Project Overview (EN)
+│   ├── PROJECT-OVERVIEW_FR.md                → Vue d’ensemble du projet (FR)
+│   ├── PROJECT-OVERVIEW.md                   → Project Overview (EN)
 │   │ 
-│   ├── README_FR.md                         → Présentation générale (FR)
-│   └── README.md                            → General Overview (EN)
+│   ├── README_FR.md                          → Présentation générale (FR)
+│   └── README.md                             → General Overview (EN)
 │
 ├── products/
-│   └── (store files)                        → Fichiers produits numériques (FR) / Digital product files (EN)
+│   └── (store files)                         → Fichiers produits numériques (FR) / Digital product files (EN)
 │
 └── endpoint/
-    ├── endpoint_a.php                       → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
-    ├── endpoint_b.php                       → Traitement des événements de paiement (FR) / Payment event handler (EN)
-    ├── endpoint_c.php                       → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
-    └── endpoint_d.php                       → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
+    ├── endpoint_a.php                        → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
+    ├── endpoint_b.php                        → Traitement des événements de paiement (FR) / Payment event handler (EN)
+    ├── endpoint_c.php                        → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
+    └── endpoint_d.php                        → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
 ```
 
 
@@ -177,6 +185,22 @@ Design goals:
 - traceable operations  
 - minimal dependencies  
 - long-term maintainability
+
+---
+
+## Layered architecture — reminder
+
+The system clearly separates:  
+
+- the public web facade (`palks-studio.com`)  
+- controlled ingestion points (contract, CSV upload)  
+- the private billing engine (`automation_finance/`)
+
+The presence of web forms does not imply  
+that billing execution occurs on the web layer.
+
+All financial generation remains strictly  
+driven by the CLI engine.
 
 ---
 
