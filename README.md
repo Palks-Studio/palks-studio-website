@@ -79,6 +79,7 @@ The emphasis is placed on:
 │   ├── studio.html                           → Présentation de Palks Studio
 │   ├── approche.html                         → Approche et principes de travail
 │   ├── ressources.html                       → Ressources techniques
+│   ├── generateur-devis.html                 → Générateur de devis PDF gratuit
 │   ├── static-site.html                      → Socle de site statique
 │   ├── chatbot-flask.html                    → Chatbot Flask auto-hébergé
 │   ├── framework-documentation.html          → Framework de documentation
@@ -253,7 +254,8 @@ single-use links, logged on the server side.
 - A public reference point  
 - A support for understanding  
 - A demonstration of structure and method  
-- A concrete example of a sober architecture without CMS or database.
+- A concrete example of a sober architecture without CMS or database  
+- as well as a free PDF quote generator, bilingual FR/EN, running entirely in the browser
 
 ---
 
@@ -294,7 +296,7 @@ Palks Studio chooses to:
 The code, structures, and documentation are designed to be understood  
 before any decision of use or purchase.
 
-This repository fully participates in this transparency approach.  
+This repository fully participates in this transparency approach.
 
 ---
 
