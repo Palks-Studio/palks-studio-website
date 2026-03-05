@@ -99,7 +99,8 @@ The emphasis is placed on:
 │   ├── services.html                         → Services page
 │   ├── studio.html                           → Studio overview
 │   ├── approach.html                         → Method & principles
-│   ├── resources.html                        → Technical resources
+│   ├── ressources.html                       → Technical resources
+│   ├── generateur-devis.html                 → Free PDF quote generator
 │   ├── static-site.html                      → Professional static foundation
 │   ├── flask-chatbot.html                    → Self-hosted Flask chatbot
 │   ├── documentation-framework.html          → Documentation framework
