@@ -79,6 +79,7 @@ L’accent est mis sur :
 │   ├── studio.html                           → Présentation de Palks Studio
 │   ├── approche.html                         → Approche et principes de travail
 │   ├── ressources.html                       → Ressources techniques
+│   ├── generateur-devis.html                 → Générateur de devis PDF gratuit
 │   ├── static-site.html                      → Socle de site statique
 │   ├── chatbot-flask.html                    → Chatbot Flask auto-hébergé
 │   ├── framework-documentation.html          → Framework de documentation
@@ -98,7 +99,8 @@ L’accent est mis sur :
 │   ├── services.html                         → Services page
 │   ├── studio.html                           → Studio overview
 │   ├── approach.html                         → Method & principles
-│   ├── resources.html                        → Technical resources
+│   ├── ressources.html                       → Technical resources
+│   ├── generateur-devis.html                 → Free PDF quote generator
 │   ├── static-site.html                      → Professional static foundation
 │   ├── flask-chatbot.html                    → Self-hosted Flask chatbot
 │   ├── documentation-framework.html          → Documentation framework
@@ -216,7 +218,8 @@ Les pages du site présentent :
 - les outils techniques développés  
 - les notes techniques et réflexions d’ingénierie  
 - les pages légales et informatives  
-- ainsi que l’accès à la boutique numérique
+- ainsi que l’accès à la boutique numérique  
+- ainsi qu'un générateur de devis PDF gratuit, bilingue et entièrement côté navigateur
 
 Le site est volontairement sobre, statique et lisible côté navigateur.  
 Il sert à la fois de vitrine de la démarche Palks Studio et de point d’entrée  
