@@ -69,10 +69,6 @@ L’accent est mis sur :
 ```
 /palks-studio-website/
 │
-├── index.html                                → Landing neutre, choix de langue (FR) / Neutral entry, language selector (EN)
-├── generate-contract.php                     → Backend génération PDF (FR) / PDF generation backend (EN)
-├── upload-batch.php                          → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
-│
 ├── fr/
 │   ├── index.html                            → Accueil principal
 │   ├── services.html                         → Page de présentation des services
@@ -123,6 +119,15 @@ L’accent est mis sur :
 ├── LICENCE.md                                → Conditions d’utilisation et cadre légal (FR)
 ├── LICENSE.md                                → Terms of use and legal Framework (EN)
 │
+├── generate-contract.php                     → Backend génération PDF (FR) / PDF generation backend (EN)
+├── upload-batch.php                          → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
+│
+├── facture-directe/
+│   ├── generateur-devis-save.php             → Journalisation des téléchargements de devis générés (FR) / Logging of generated quote downloads (EN)
+│   ├── generateur-devis.php                  → Générateur de devis client (FR) / Client-side quote generator (EN)
+│   ├── pdf-proxy.php                         → Accès sécurisé aux PDF via token temporaire (FR) / Secure PDF access through temporary token (EN)
+│   └── signer.php                            → Signature électronique du devis + validation client (FR) / Quote electronic signature and client approval (EN)
+│
 ├── downloads_tokens/
 │   ├── downloads.log                         → Journal des téléchargements réels (FR) / Download activity log (EN)
 │   ├── security.log                          → Journal des accès sécurisés aux fichiers (FR) / Secure download access log (EN)
@@ -151,10 +156,8 @@ L’accent est mis sur :
 ├── docs/
 │   ├── VUE_D_ENSEMBLE.md                     → Vue d’ensemble du système (FR)
 │   ├── OVERVIEW.md                           → System Overview (EN)
-│   │ 
 │   ├── PROJECT-OVERVIEW_FR.md                → Vue d’ensemble du projet (FR)
 │   ├── PROJECT-OVERVIEW.md                   → Project Overview (EN)
-│   │ 
 │   ├── README_FR.md                          → Présentation générale (FR)
 │   └── README.md                             → General Overview (EN)
 │
@@ -188,9 +191,7 @@ Objectifs techniques :
 - dépendances minimales  
 - maintenabilité long terme
 
----
-
-## Architecture en couches
+### Architecture en couches
 
 Le système distingue clairement :  
 
@@ -206,9 +207,7 @@ pilotée par les scripts CLI du moteur.
 
 ---
 
-## Contenu de ce dépôt
-
-### 1. Le site Palks Studio (version publique)
+## Le site Palks Studio (version publique)
 
 Les pages du site présentent :  
 
@@ -219,19 +218,18 @@ Les pages du site présentent :
 - les notes techniques et réflexions d’ingénierie  
 - les pages légales et informatives  
 - ainsi que l’accès à la boutique numérique  
-- ainsi qu'un générateur de devis PDF gratuit, bilingue et entièrement côté navigateur
+- ainsi qu'un générateur de devis PDF gratuit, bilingue et entièrement côté navigateur.
 
-Le site est volontairement sobre, statique et lisible côté navigateur.  
-Il sert à la fois de vitrine de la démarche Palks Studio et de point d’entrée  
-vers la vente et la distribution de produits numériques et également de vitrine au service de facturation batch mensuelle opéré via Althemia.
+Cet outil fonctionne entièrement côté client (JavaScript + jsPDF) et ne transmet  
+aucune donnée à un serveur. Il permet de créer rapidement un devis professionnel  
+avec plusieurs lignes de prestations, calcul automatique HT / TVA / TTC,  
+et export direct en PDF.
 
-Côté serveur, le site s’appuie sur un pipeline minimal :  
-`Stripe → Webhook → Facture PDF → Token sécurisé → Téléchargement`,  
-sans CMS et sans base de données.
+Le générateur est totalement indépendant du pipeline de facturation  
+(Stripe → Webhook → Facture → Token → Téléchargement) et ne crée  
+ni transaction ni archive côté serveur.
 
----
-
-### 2. Ressources et distribution numérique
+### Ressources et distribution numérique
 
 Certaines ressources sont fournies sous forme de documents, archives ou fichiers téléchargeables, notamment lorsque le contenu comprend :  
 
