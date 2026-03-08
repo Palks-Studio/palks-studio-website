@@ -69,10 +69,6 @@ The emphasis is placed on:
 ```
 /palks-studio-website/
 │
-├── index.html                                → Landing neutre, choix de langue (FR) / Neutral entry, language selector (EN)
-├── generate-contract.php                     → Backend génération PDF (FR) / PDF generation backend (EN)
-├── upload-batch.php                          → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
-│
 ├── fr/
 │   ├── index.html                            → Accueil principal
 │   ├── services.html                         → Page de présentation des services
@@ -123,6 +119,15 @@ The emphasis is placed on:
 ├── LICENCE.md                                → Conditions d’utilisation et cadre légal (FR)
 ├── LICENSE.md                                → Terms of use and legal Framework (EN)
 │
+├── generate-contract.php                     → Backend génération PDF (FR) / PDF generation backend (EN)
+├── upload-batch.php                          → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
+│
+├── facture-directe/
+│   ├── generateur-devis-save.php             → Journalisation des téléchargements de devis générés (FR) / Logging of generated quote downloads (EN)
+│   ├── generateur-devis.php                  → Générateur de devis client (FR) / Client-side quote generator (EN)
+│   ├── pdf-proxy.php                         → Accès sécurisé aux PDF via token temporaire (FR) / Secure PDF access through temporary token (EN)
+│   └── signer.php                            → Signature électronique du devis + validation client (FR) / Quote electronic signature and client approval (EN)
+│
 ├── downloads_tokens/
 │   ├── downloads.log                         → Journal des téléchargements réels (FR) / Download activity log (EN)
 │   ├── security.log                          → Journal des accès sécurisés aux fichiers (FR) / Secure download access log (EN)
@@ -151,10 +156,8 @@ The emphasis is placed on:
 ├── docs/
 │   ├── VUE_D_ENSEMBLE.md                     → Vue d’ensemble du système (FR)
 │   ├── OVERVIEW.md                           → System Overview (EN)
-│   │ 
 │   ├── PROJECT-OVERVIEW_FR.md                → Vue d’ensemble du projet (FR)
 │   ├── PROJECT-OVERVIEW.md                   → Project Overview (EN)
-│   │ 
 │   ├── README_FR.md                          → Présentation générale (FR)
 │   └── README.md                             → General Overview (EN)
 │
@@ -188,9 +191,7 @@ Design goals:
 - minimal dependencies  
 - long-term maintainability
 
----
-
-## Layered architecture — reminder
+### Layered architecture — reminder
 
 The system clearly separates:  
 
@@ -206,9 +207,7 @@ driven by the CLI engine.
 
 ---
 
-## Repository contents
-
-### 1. The Palks Studio website (public version)
+## The Palks Studio website (public version)
 
 The site pages present:  
 
@@ -218,19 +217,18 @@ The site pages present:
 - the technical tools developed  
 - the technical notes and engineering reflections  
 - the legal and informational pages  
-- as well as access to the digital store
+- as well as a free bilingual PDF quote generator that runs entirely in the browser.
 
-The site is intentionally sober, static, and readable on the client side.  
-It serves both as a showcase of the Palks Studio approach and as an entry point for the sale and distribution of digital products,  
-as well as a showcase for the monthly batch invoicing service operated via Althemia.
+This tool operates fully client-side (JavaScript + jsPDF) and does not transmit  
+any data to a server. It allows users to quickly create professional quotes  
+with multiple service lines, automatic subtotal / VAT / total calculations,  
+and direct PDF export.
 
-On the server side, the site relies on a minimal pipeline:  
-`Stripe → Webhook → PDF Invoice → Secure Token → Download`,  
-with no CMS and no database.
+The generator is completely independent from the billing pipeline  
+(Stripe → Webhook → Invoice → Token → Download) and does not create  
+any transaction or archive on the server side.
 
----
-
-### 2. Resources and digital distribution
+### Resources and digital distribution
 
 Some resources are provided as documents, archives, or downloadable files,  
 particularly when the content includes:  
