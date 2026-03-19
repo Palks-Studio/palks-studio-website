@@ -84,6 +84,7 @@ The emphasis is placed on:
 │   ├── mentions-legales.html                 → Mentions légales (FR) / Legal notice (EN)
 │   ├── contact.html                          → Page de contact
 │   ├── facturation-batch-facturx.html        → Service de facturation batch Factur-X
+│   ├── facturation-sans-saas.html            → Service de facturation autonome sans SaaS (devis, factures, paiements)
 │   ├── notes-techniques.html*                → Notes techniques
 │   ├── cgv.html                              → Conditions générales de vente
 │   ├── faq.html                              → Foire aux questions
@@ -104,6 +105,7 @@ The emphasis is placed on:
 │   ├── links.html                            → Links & resources
 │   ├── contact.html                          → Contact page
 │   ├── batch-invoicing-facturx.html          → Factur-X batch billing service
+│   ├── invoicing-without-saas.html           → Autonomous invoicing service without SaaS (quotes, invoices, payments)
 │   ├── technical-notes.html*                 → Technical notes
 │   ├── faq.html                              → Frequently Asked Questions
 │   └── terms.html                            → Terms and Conditions
