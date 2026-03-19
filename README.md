@@ -122,12 +122,6 @@ The emphasis is placed on:
 ├── generate-contract.php                     → Backend génération PDF (FR) / PDF generation backend (EN)
 ├── upload-batch.php                          → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
 │
-├── facture-directe/
-│   ├── generateur-devis-save.php             → Journalisation des téléchargements de devis générés (FR) / Logging of generated quote downloads (EN)
-│   ├── generateur-devis.php                  → Générateur de devis client (FR) / Client-side quote generator (EN)
-│   ├── pdf-proxy.php                         → Accès sécurisé aux PDF via token temporaire (FR) / Secure PDF access through temporary token (EN)
-│   └── signer.php                            → Signature électronique du devis + validation client (FR) / Quote electronic signature and client approval (EN)
-│
 ├── downloads_tokens/
 │   ├── downloads.log                         → Journal des téléchargements réels (FR) / Download activity log (EN)
 │   ├── security.log                          → Journal des accès sécurisés aux fichiers (FR) / Secure download access log (EN)
