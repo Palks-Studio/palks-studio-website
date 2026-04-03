@@ -72,6 +72,7 @@ The emphasis is placed on:
 ├── fr/
 │   ├── index.html                            → Accueil principal
 │   ├── services.html                         → Page de présentation des services
+│   ├── facturation-sans-saas.html            → Système de facturation autonome
 │   ├── studio.html                           → Présentation de Palks Studio
 │   ├── approche.html                         → Approche et principes de travail
 │   ├── ressources.html                       → Ressources techniques
@@ -94,6 +95,7 @@ The emphasis is placed on:
 ├── en/
 │   ├── index.html                            → Home page
 │   ├── services.html                         → Services page
+│   ├── invoicing-without-saas.html           → Autonomous invoicing system
 │   ├── studio.html                           → Studio overview
 │   ├── approach.html                         → Method & principles
 │   ├── ressources.html                       → Technical resources
