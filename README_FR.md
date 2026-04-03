@@ -72,6 +72,7 @@ L’accent est mis sur :
 ├── fr/
 │   ├── index.html                            → Accueil principal
 │   ├── services.html                         → Page de présentation des services
+│   ├── facturation-sans-saas.html            → Système de facturation autonome
 │   ├── studio.html                           → Présentation de Palks Studio
 │   ├── approche.html                         → Approche et principes de travail
 │   ├── ressources.html                       → Ressources techniques
@@ -88,12 +89,13 @@ L’accent est mis sur :
 │   ├── notes-techniques.html*                → Notes techniques
 │   ├── cgv.html                              → Conditions générales de vente
 │   ├── faq.html                              → Foire aux questions
-│   └── politique-confidentialite.html        → Politique de confidentialité (FR) / Privacy policy (EN)
+│   └── politique-confidentialite.html        → Politique de confidentialité (FR) / Privacy policy (EN)    facturation-sans-saas
 │
 │
 ├── en/
 │   ├── index.html                            → Home page
 │   ├── services.html                         → Services page
+│   ├── invoicing-without-saas.html           → Autonomous invoicing system
 │   ├── studio.html                           → Studio overview
 │   ├── approach.html                         → Method & principles
 │   ├── ressources.html                       → Technical resources
