@@ -93,7 +93,6 @@ The emphasis is placed on:
 │   ├── faq.html                              → Foire aux questions
 │   └── politique-confidentialite.html        → Politique de confidentialité (FR) / Privacy policy (EN)    facturation-sans-saas
 │
-│
 ├── en/
 │   ├── index.html                            → Home page
 │   ├── services.html                         → Services page
