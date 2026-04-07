@@ -73,6 +73,10 @@ L’accent est mis sur :
 │   ├── index.html                            → Accueil principal
 │   ├── services.html                         → Page de présentation des services
 │   ├── facturation-sans-saas.html            → Système de facturation autonome
+│   ├── facturation-batch-facturx.html        → Service de facturation batch Factur-X
+│   ├── facturation-sans-saas.html            → Service de facturation autonome sans SaaS (devis, factures, paiements)
+│   ├── sans-abonnement.html                  → Approche sans abonnement
+│   ├── systemes-techniques-autonomes.html    → Développement backend sur mesure
 │   ├── studio.html                           → Présentation de Palks Studio
 │   ├── approche.html                         → Approche et principes de travail
 │   ├── ressources.html                       → Ressources techniques
@@ -84,18 +88,19 @@ L’accent est mis sur :
 │   ├── liens.html                            → Liens, ressources, produits
 │   ├── mentions-legales.html                 → Mentions légales (FR) / Legal notice (EN)
 │   ├── contact.html                          → Page de contact
-│   ├── facturation-batch-facturx.html        → Service de facturation batch Factur-X
-│   ├── facturation-sans-saas.html            → Service de facturation autonome sans SaaS (devis, factures, paiements)
 │   ├── notes-techniques.html*                → Notes techniques
 │   ├── cgv.html                              → Conditions générales de vente
 │   ├── faq.html                              → Foire aux questions
 │   └── politique-confidentialite.html        → Politique de confidentialité (FR) / Privacy policy (EN)    facturation-sans-saas
 │
-│
 ├── en/
 │   ├── index.html                            → Home page
 │   ├── services.html                         → Services page
 │   ├── invoicing-without-saas.html           → Autonomous invoicing system
+│   ├── batch-invoicing-facturx.html          → Factur-X batch billing service
+│   ├── invoicing-without-saas.html           → Autonomous invoicing service without SaaS (quotes, invoices, payments)
+│   ├── no-subscription.html                  → No-subscription approach
+│   ├── autonomous-backend-systems.html       → Custom backend development
 │   ├── studio.html                           → Studio overview
 │   ├── approach.html                         → Method & principles
 │   ├── ressources.html                       → Technical resources
@@ -106,8 +111,6 @@ L’accent est mis sur :
 │   ├── vscode-environment-pack.html          → VS Code environment pack
 │   ├── links.html                            → Links & resources
 │   ├── contact.html                          → Contact page
-│   ├── batch-invoicing-facturx.html          → Factur-X batch billing service
-│   ├── invoicing-without-saas.html           → Autonomous invoicing service without SaaS (quotes, invoices, payments)
 │   ├── technical-notes.html*                 → Technical notes
 │   ├── faq.html                              → Frequently Asked Questions
 │   └── terms.html                            → Terms and Conditions
