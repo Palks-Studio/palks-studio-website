@@ -104,7 +104,7 @@ L’accent est mis sur :
 │   ├── studio.html                           → Studio overview
 │   ├── approach.html                         → Method & principles
 │   ├── ressources.html                       → Technical resources
-│   ├── generateur-devis.html                 → Free PDF quote generator
+│   ├── quote-generator.html                  → Free PDF quote generator
 │   ├── static-site.html                      → Professional static foundation
 │   ├── flask-chatbot.html                    → Self-hosted Flask chatbot
 │   ├── documentation-framework.html          → Documentation framework
