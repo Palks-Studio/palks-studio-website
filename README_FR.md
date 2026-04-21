@@ -69,51 +69,8 @@ L’accent est mis sur :
 ```
 /palks-studio-website/
 │
-├── fr/
-│   ├── index.html                            → Accueil principal
-│   ├── services.html                         → Page de présentation des services
-│   ├── facturation-sans-saas.html            → Système de facturation autonome
-│   ├── facturation-batch-facturx.html        → Service de facturation batch Factur-X
-│   ├── facturation-sans-saas.html            → Service de facturation autonome sans SaaS (devis, factures, paiements)
-│   ├── sans-abonnement.html                  → Approche sans abonnement
-│   ├── systemes-techniques-autonomes.html    → Développement backend sur mesure
-│   ├── studio.html                           → Présentation de Palks Studio
-│   ├── approche.html                         → Approche et principes de travail
-│   ├── ressources.html                       → Ressources techniques
-│   ├── generateur-devis.html                 → Générateur de devis PDF gratuit
-│   ├── static-site.html                      → Socle de site statique
-│   ├── chatbot-flask.html                    → Chatbot Flask auto-hébergé
-│   ├── framework-documentation.html          → Framework de documentation
-│   ├── pack-environnement-vscode.html        → Pack environnement VS Code
-│   ├── liens.html                            → Liens, ressources, produits
-│   ├── mentions-legales.html                 → Mentions légales (FR) / Legal notice (EN)
-│   ├── contact.html                          → Page de contact
-│   ├── notes-techniques.html*                → Notes techniques
-│   ├── cgv.html                              → Conditions générales de vente
-│   ├── faq.html                              → Foire aux questions
-│   └── politique-confidentialite.html        → Politique de confidentialité (FR) / Privacy policy (EN)    facturation-sans-saas
-│
-├── en/
-│   ├── index.html                            → Home page
-│   ├── services.html                         → Services page
-│   ├── invoicing-without-saas.html           → Autonomous invoicing system
-│   ├── batch-invoicing-facturx.html          → Factur-X batch billing service
-│   ├── invoicing-without-saas.html           → Autonomous invoicing service without SaaS (quotes, invoices, payments)
-│   ├── no-subscription.html                  → No-subscription approach
-│   ├── autonomous-backend-systems.html       → Custom backend development
-│   ├── studio.html                           → Studio overview
-│   ├── approach.html                         → Method & principles
-│   ├── ressources.html                       → Technical resources
-│   ├── quote-generator.html                  → Free PDF quote generator
-│   ├── static-site.html                      → Professional static foundation
-│   ├── flask-chatbot.html                    → Self-hosted Flask chatbot
-│   ├── documentation-framework.html          → Documentation framework
-│   ├── vscode-environment-pack.html          → VS Code environment pack
-│   ├── links.html                            → Links & resources
-│   ├── contact.html                          → Contact page
-│   ├── technical-notes.html*                 → Technical notes
-│   ├── faq.html                              → Frequently Asked Questions
-│   └── terms.html                            → Terms and Conditions
+├── fr/                                       → Pages du site (FR)
+├── en/                                       → Pages du site (EN)
 │
 ├── assets/
 │   ├── css/
@@ -126,33 +83,22 @@ L’accent est mis sur :
 ├── LICENCE.md                                → Conditions d’utilisation et cadre légal (FR)
 ├── LICENSE.md                                → Terms of use and legal Framework (EN)
 │
-├── generate-contract.php                     → Backend génération PDF (FR) / PDF generation backend (EN)
-├── upload-batch.php                          → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
+├── core/                                     → Backend génération PDF (FR) / PDF generation backend (EN)
+├── endpoint/                                 → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
 │
-├── downloads_tokens/
-│   ├── downloads.log                         → Journal des téléchargements réels (FR) / Download activity log (EN)
-│   ├── security.log                          → Journal des accès sécurisés aux fichiers (FR) / Secure download access log (EN)
-│   └── tokens.json                           → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
+├── storage/
+│   └── protected/                            → Stockage sécurisé interne (FR) / Secure internal storage (EN)
 │
 ├── config/
-│   └── download.php                          → Configuration centrale des téléchargements (FR) / Central download configuration (EN)
+│   └── download/                             → Configuration interne des téléchargements (FR) / Internal download configuration (EN)
 │
 ├── library/
-│   ├── contact-contrat-fr.html               → Génération contrat + configuration client (FR)
-│   ├── contact-contrat-en.html               → Contract + client configuration generation (EN)
-│   ├── contrat-template-fr.html              → Template de contrat (FR)
-│   ├── contrat-template-en.html              → Contract template (EN)
-│   ├── upload-batch-fr.html                  → Formulaire d’envoi CSV client (FR)
-│   ├── upload-batch-en.html                  → Client CSV upload form (EN)
-│   ├── cancel.html                           → Page d’annulation de paiement (FR)/ Payment cancellation page (EN)
-│   ├── success.html                          → Page de paiement validé (FR) / Payment success page (EN)
-│   ├── counter.json                          → Compteur persistant de factures (FR) / Persistent invoice counter (EN)
-│   ├── get_counter.php                       → Lecture sécurisée du compteur de factures (FR) / Secure invoice counter reader (EN)
-│   ├── lib_*.php                             → Incrémentation atomique du numéro de facture (FR) / Secure invoice counter reader (EN)
-│   ├── lib_*.php                             → Génération HTML des factures (FR) / Atomic invoice number increment (EN)
-│   ├── lib_*.php                             → Envoi e-mails transactionnels (FR) / Transactional email delivery (EN)
-│   ├── lib_*.php                             → Génération PDF via DomPDF (FR) / PDF generation via DomPDF (EN)
-│   └── template_invoice.html                 → Template HTML de facture (FR) / Invoice HTML template (EN)
+│   ├── contracts/                            → Génération et templates de contrats (FR) / Contract generation and templates (EN)
+│   ├── batch/                                → Interface d’import et traitement CSV (FR) / CSV import and processing interface (EN)
+│   ├── payments/                             → Pages de gestion des paiements (FR) / Payment handling pages (EN)
+│   ├── counters/                             → Gestion de la numérotation (FR) / Numbering management (EN)
+│   ├── core/                                 → Fonctions internes (génération, email, PDF) (FR) / Internal functions (generation, email, PDF) (EN)
+│   └── templates/                            → Modèles de documents (FR) / Document templates (EN)
 │
 ├── docs/
 │   ├── VUE_D_ENSEMBLE.md                     → Vue d’ensemble du système (FR)
@@ -162,8 +108,7 @@ L’accent est mis sur :
 │   ├── README_FR.md                          → Présentation générale (FR)
 │   └── README.md                             → General Overview (EN)
 │
-├── products/
-│   └── (store files)                         → Fichiers produits numériques (FR) / Digital product files (EN)
+├── store/                                    → Fichiers produits numériques (FR) / Digital product files (EN)
 │
 └── endpoint/
     ├── endpoint_a.php                        → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
