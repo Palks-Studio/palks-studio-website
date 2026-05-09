@@ -247,3 +247,4 @@ This repository fully participates in this transparency approach.
 
 © Palks Studio — see LICENSE.md  
 - https://palks-studio.com
+
