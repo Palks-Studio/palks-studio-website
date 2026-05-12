@@ -69,52 +69,49 @@ L’accent est mis sur :
 ```
 /palks-studio-website/
 │
-├── fr/                                       → Pages du site (FR)
-├── en/                                       → Pages du site (EN)
+├── fr/                         → Pages du site (FR)
+├── en/                         → Pages du site (EN)
 │
 ├── assets/
 │   ├── css/
-│   │   └── style.css                         → Global stylesheet (FR) / Feuille de styles globale (EN)
-│   └── img/                                  → Images et visuels (FR) / Images and visuals (EN)
+│   │   └── style.css           → Feuille de styles globale
+│   └── img/                    → Images et visuels
 │
-├── robots.txt                                → Règles pour moteurs de recherche (FR) / Search engine directives (EN)
-├── sitemap.xml                               → Plan du site pour indexation (FR) / Sitemap for indexing (EN)
+├── robots.txt                  → Règles pour moteurs de recherche
+├── sitemap.xml                 → Plan du site pour indexation
+├── manifest.json               → Configuration PWA du système
 │
-├── LICENCE.md                                → Conditions d’utilisation et cadre légal (FR)
-├── LICENSE.md                                → Terms of use and legal Framework (EN)
+├── LICENCE.md                  → Conditions d’utilisation et cadre légal
 │
-├── core/                                     → Backend génération PDF (FR) / PDF generation backend (EN)
-├── endpoint/                                 → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
+├── core/                       → Backend génération PDF
+├── endpoint/                   → Moteur de traitement du formulaire CSV
 │
 ├── storage/
-│   └── protected/                            → Stockage sécurisé interne (FR) / Secure internal storage (EN)
+│   └── protected/              → Stockage sécurisé interne
 │
 ├── config/
-│   └── download/                             → Configuration interne des téléchargements (FR) / Internal download configuration (EN)
+│   └── download/               → Configuration interne des téléchargements
 │
 ├── library/
-│   ├── contracts/                            → Génération et templates de contrats (FR) / Contract generation and templates (EN)
-│   ├── batch/                                → Interface d’import et traitement CSV (FR) / CSV import and processing interface (EN)
-│   ├── payments/                             → Pages de gestion des paiements (FR) / Payment handling pages (EN)
-│   ├── counters/                             → Gestion de la numérotation (FR) / Numbering management (EN)
-│   ├── core/                                 → Fonctions internes (génération, email, PDF) (FR) / Internal functions (generation, email, PDF) (EN)
-│   └── templates/                            → Modèles de documents (FR) / Document templates (EN)
+│   ├── contracts/              → Génération et templates de contrats
+│   ├── batch/                  → Interface d’import et traitement CSV
+│   ├── payments/               → Pages de gestion des paiements
+│   ├── counters/               → Gestion de la numérotation
+│   ├── core/                   → Fonctions internes (génération, email, PDF)
+│   └── templates/              → Modèles de documents
 │
 ├── docs/
-│   ├── VUE_D_ENSEMBLE.md                     → Vue d’ensemble du système (FR)
-│   ├── OVERVIEW.md                           → System Overview (EN)
-│   ├── PROJECT-OVERVIEW_FR.md                → Vue d’ensemble du projet (FR)
-│   ├── PROJECT-OVERVIEW.md                   → Project Overview (EN)
-│   ├── README_FR.md                          → Présentation générale (FR)
-│   └── README.md                             → General Overview (EN)
+│   ├── VUE_D_ENSEMBLE.md       → Vue d’ensemble du système
+│   ├── PROJECT-OVERVIEW_FR.md  → Vue d’ensemble du projet
+│   └── README_FR.md            → Présentation générale
 │
-├── store/                                    → Fichiers produits numériques (FR) / Digital product files (EN)
+├── store/                      → Fichiers produits numériques
 │
 └── endpoint/
-    ├── endpoint_a.php                        → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
-    ├── endpoint_b.php                        → Traitement des événements de paiement (FR) / Payment event handler (EN)
-    ├── endpoint_c.php                        → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
-    └── endpoint_d.php                        → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
+    ├── endpoint_a.php          → Initialisation d’une session de paiement
+    ├── endpoint_b.php          → Traitement des événements de paiement
+    ├── endpoint_c.php          → Traitement post-paiement
+    └── endpoint_d.php          → Point d’accès sécurisé aux fichiers
 ```
 
 
