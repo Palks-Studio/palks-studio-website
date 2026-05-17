@@ -69,49 +69,97 @@ L’accent est mis sur :
 ```
 /palks-studio-website/
 │
-├── fr/                         → Pages du site (FR)
-├── en/                         → Pages du site (EN)
+├── palks-studio.com/
+│    │
+│    ├── fr/                                 → Pages du site (FR) / Website pages (EN)
+│    ├── en/                                 → Pages du site (FR) / Website pages (EN)
+│    │
+│    ├── facturx-demo/
+│    │   ├── invoice-generator.php           → Point d’entrée de génération de facture (FR) / Invoice generation entry point (EN)
+│    │   ├── invoice-template.php            → Modèle HTML de facture (FR) / Invoice HTML template (EN)
+│    │   ├── facturx-xml-builder.php         → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
+│    │   ├── inject-facturx-xml.py           → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
+│    │   ├── direct-generation-engine.php    → Pipeline de génération directe (FR) / Direct generation pipeline (EN)
+│    │   └── vendor/                         → Dépendances packagées (FR) / Packaged dependencies (EN)
+│    │
+│    ├── api/
+│    │   ├── facturx-generation-engine.php   → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
+│    │   ├── facturx-xml-builder.php         → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
+│    │   ├── inject-facturx-xml.py           → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
+│    │   ├── invoice-template.php            → Modèle HTML de facture (FR) / Invoice HTML template (EN)
+│    │   └── vendor/                         → Dépendances packagées (FR) / Packaged dependencies (EN)
+│    │
+│    ├── assets/
+│    │   ├── css/
+│    │   │   └── global-style.css            → Global stylesheet (FR) / Feuille de styles globale (EN)
+│    │   └── img/                            → Images et visuels (FR) / Images and visuals (EN)
+│    │
+│    ├── batch-downloads/
+│    │   └── batch-download-access.php       → Point d'accès aux téléchargements batch (FR) / Batch download access endpoint (EN)
+│    │
+│    ├── store/                              → Fichiers produits numériques (FR) / Digital product files (EN)
+│    ├── contract-pdf-generator.php          → Backend génération PDF (FR) / PDF generation backend (EN)
+│    ├── batch-upload-engine.php             → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
+│    ├── robots.txt                          → Règles pour moteurs de recherche (FR) / Search engine directives (EN)
+│    ├── sitemap.xml                         → Plan du site pour indexation (FR) / Sitemap for indexing (EN)
+│    ├── manifest.json                       → Configuration PWA du système (FR) / System PWA configuration (EN)
+│    │
+│    ├── library/
+│    │   ├── contract-client-config-fr.html  → Génération contrat + configuration client (FR)
+│    │   ├── contract-client-config-en.html  → Contract generation + client configuration (EN)
+│    │   ├── contract-template-fr.html       → Template de contrat (FR)
+│    │   ├── contract-template-en.html       → Contract template (EN)
+│    │   ├── batch-upload-fr.html            → Formulaire d’envoi CSV client (FR)
+│    │   ├── batch-upload-en.html            → Client CSV upload form (EN)
+│    │   ├── payment-cancel.html             → Page d’annulation de paiement (FR)/ Payment cancellation page (EN)
+│    │   ├── payment-success.html            → Page de paiement validé (FR) / Payment success page (EN)
+│    │   └── invoice-template.html           → Template HTML de facture (FR) / Invoice HTML template (EN)
+│    │
+│    └── stripe/
+│        ├── checkout-session.php            → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
+│        ├── payment-webhook.php             → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
+│        └── secure-download.php             → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
 │
-├── assets/
-│   ├── css/
-│   │   └── style.css           → Feuille de styles globale
-│   └── img/                    → Images et visuels
 │
-├── robots.txt                  → Règles pour moteurs de recherche
-├── sitemap.xml                 → Plan du site pour indexation
-├── manifest.json               → Configuration PWA du système
-│
-├── LICENCE.md                  → Conditions d’utilisation et cadre légal
-│
-├── core/                       → Backend génération PDF
-├── endpoint/                   → Moteur de traitement du formulaire CSV
-│
-├── storage/
-│   └── protected/              → Stockage sécurisé interne
-│
-├── config/
-│   └── download/               → Configuration interne des téléchargements
-│
-├── library/
-│   ├── contracts/              → Génération et templates de contrats
-│   ├── batch/                  → Interface d’import et traitement CSV
-│   ├── payments/               → Pages de gestion des paiements
-│   ├── counters/               → Gestion de la numérotation
-│   ├── core/                   → Fonctions internes (génération, email, PDF)
-│   └── templates/              → Modèles de documents
-│
-├── docs/
-│   ├── VUE_D_ENSEMBLE.md       → Vue d’ensemble du système
-│   ├── PROJECT-OVERVIEW_FR.md  → Vue d’ensemble du projet
-│   └── README_FR.md            → Présentation générale
-│
-├── store/                      → Fichiers produits numériques
-│
-└── endpoint/
-    ├── endpoint_a.php          → Initialisation d’une session de paiement
-    ├── endpoint_b.php          → Traitement des événements de paiement
-    ├── endpoint_c.php          → Traitement post-paiement
-    └── endpoint_d.php          → Point d’accès sécurisé aux fichiers
+└── palks-studio/
+     ├── invoice-counter.json               → Compteur persistant de factures (FR) / Persistent invoice counter (EN)
+     ├── invoice-counter-reader.php         → Lecture sécurisée du prochain numéro de facture (FR) / Secure invoice counter reader (EN)
+     ├── invoice-counter-engine.php         → Incrémentation atomique du numéro de facture (FR) / Atomic invoice number increment (EN)
+     ├── invoice-html-engine.php            → Génération HTML des factures (FR) / Invoice HTML generation (EN)
+     ├── transactional-mailer.php           → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
+     ├── invoice-pdf-engine.php             → Génération PDF via mPDF (FR) / PDF generation via mPDF (EN)
+     ├── system-config.php                  → Configuration centralisée des chemins et variables système (FR) / Centralized system paths and variables configuration (EN)
+     ├── rate-limit-storage.json            → Stockage des limitations de requêtes IP (FR) / IP request rate limit storage (EN)
+     │
+     ├── config/
+     │   └── download-config.php            → Configuration centrale des téléchargements (FR) / Central download configuration (EN)
+     │
+     ├── cron/
+     │   └── cleanup-expired-data.php       → Nettoyage automatique des journaux et fichiers expirés (FR) / Automatic cleanup of logs and expired files (EN)
+     │
+     ├── download-tokens/
+     │   ├── download-activity.log          → Journal des téléchargements réels (FR) / Download activity log (EN)
+     │   └── download-tokens.json           → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
+     │
+     ├── pdf/
+     │   ├── invoices/                      → Factures PDF générées (FR) / Generated PDF invoices (EN)
+     │   └── accounting-records/            → Journaux comptables CSV (FR) / Accounting CSV records (EN)
+     │
+     ├── logs/                              → Journaux système et erreurs (FR) / System logs and errors (EN)
+     ├── phpmailer/                         → Bibliothèque d’envoi email (FR) / Email sending library (EN)
+     ├── stripe-php/                        → SDK Stripe PHP officiel (FR) / Official Stripe PHP SDK (EN)
+     ├── vendor/                            → Dépendances Composer PHP (FR) / Composer PHP dependencies (EN)
+     │
+     ├── LICENCE.md                         → Conditions d’utilisation et cadre légal (FR)
+     ├── LICENSE.md                         → Terms of use and legal framework (EN)
+     │
+     └── docs/
+         ├── SYSTEM-OVERVIEW_FR.md          → Vue d’ensemble du système (FR)
+         ├── SYSTEM-OVERVIEW.md             → System overview (EN)
+         ├── PROJECT-OVERVIEW_FR.md         → Vue d’ensemble du projet (FR)
+         ├── PROJECT-OVERVIEW.md            → Project overview (EN)
+         ├── README_FR.md                   → Présentation générale (FR)
+         └── README.md                      → General overview (EN)
 ```
 
 
@@ -139,14 +187,13 @@ Objectifs techniques :
 Le système distingue clairement :  
 
 - la façade web publique (`palks-studio.com`)  
-- les points d’ingestion contrôlés (contrat, upload CSV)  
-- le moteur de facturation privé (`automation_finance/`)
+- les points d’ingestion contrôlés (contrat, upload CSV)
 
 La présence des formulaires côté site ne signifie  
 pas une exécution de la facturation côté web.
 
-Toute génération financière reste strictement  
-pilotée par les scripts CLI du moteur.
+Toute génération financière est déclenchée par le webhook Stripe  
+et traitée côté serveur privé.
 
 ---
 
@@ -186,6 +233,22 @@ la clarté du dépôt et la traçabilité des livrables.
 
 La distribution des fichiers se fait via un système sécurisé à lien temporaire  
 et usage unique, journalisé côté serveur.
+
+---
+
+### Démonstration Factur-X
+
+Une démonstration de génération de facture Factur-X est disponible sur le site.
+
+Cette démonstration est volontairement limitée afin de garantir la stabilité du service et d'éviter tout usage abusif.
+
+Le pipeline de démonstration comprend :  
+
+- rendu du template HTML de facture  
+- construction du XML Factur-X (conforme EN16931)  
+- injection du XML dans le PDF
+
+Pour une utilisation professionnelle, une intégration complète et conforme peut être mise en place selon les besoins.
 
 ---
 
