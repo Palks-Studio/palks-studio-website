@@ -124,7 +124,6 @@ The emphasis is placed on:
 └── palks-studio/
      ├── invoice-counter.json               → Compteur persistant de factures (FR) / Persistent invoice counter (EN)
      ├── invoice-counter-reader.php         → Lecture sécurisée du prochain numéro de facture (FR) / Secure invoice counter reader (EN)
-     ├── invoice-counter-engine.php         → Incrémentation atomique du numéro de facture (FR) / Atomic invoice number increment (EN)
      ├── invoice-html-engine.php            → Génération HTML des factures (FR) / Invoice HTML generation (EN)
      ├── transactional-mailer.php           → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
      ├── invoice-pdf-engine.php             → Génération PDF via mPDF (FR) / PDF generation via mPDF (EN)
