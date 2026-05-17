@@ -79,15 +79,13 @@ The emphasis is placed on:
 │    │   ├── invoice-template.php            → Modèle HTML de facture (FR) / Invoice HTML template (EN)
 │    │   ├── facturx-xml-builder.php         → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
 │    │   ├── inject-facturx-xml.py           → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
-│    │   ├── direct-generation-engine.php    → Pipeline de génération directe (FR) / Direct generation pipeline (EN)
-│    │   └── vendor/                         → Dépendances packagées (FR) / Packaged dependencies (EN)
+│    │   └── direct-generation-engine.php    → Pipeline de génération directe (FR) / Direct generation pipeline (EN)
 │    │
 │    ├── api/
 │    │   ├── facturx-generation-engine.php   → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
 │    │   ├── facturx-xml-builder.php         → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
 │    │   ├── inject-facturx-xml.py           → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
-│    │   ├── invoice-template.php            → Modèle HTML de facture (FR) / Invoice HTML template (EN)
-│    │   └── vendor/                         → Dépendances packagées (FR) / Packaged dependencies (EN)
+│    │   └── invoice-template.php            → Modèle HTML de facture (FR) / Invoice HTML template (EN)
 │    │
 │    ├── assets/
 │    │   ├── css/
@@ -147,7 +145,7 @@ The emphasis is placed on:
      ├── logs/                              → Journaux système et erreurs (FR) / System logs and errors (EN)
      ├── phpmailer/                         → Bibliothèque d’envoi email (FR) / Email sending library (EN)
      ├── stripe-php/                        → SDK Stripe PHP officiel (FR) / Official Stripe PHP SDK (EN)
-     ├── vendor/                            → Dépendances Composer PHP (FR) / Composer PHP dependencies (EN)
+     ├── vendor/                            → Dépendances PHP (FR) / PHP dependencies (EN)
      │
      ├── LICENCE.md                         → Conditions d’utilisation et cadre légal (FR)
      ├── LICENSE.md                         → Terms of use and legal framework (EN)
