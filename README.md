@@ -10,6 +10,8 @@
 ![Static Website](https://img.shields.io/badge/Type-Static%20Website-151b1c?style=flat)
 ![Documentation](https://img.shields.io/badge/Focus-Documentation-0095b1?style=flat)
 ![Bilingual](https://img.shields.io/badge/Lang-FR%20%2F%20EN-0a5645?style=flat)
+[![YouTube](https://img.shields.io/badge/YouTube-@Palks__Studio-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@Palks_Studio)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-@Palks__Studio-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palks-studio/)
 
 <p align="center">
   <a href="https://palks-studio.com">
