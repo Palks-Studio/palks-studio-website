@@ -76,13 +76,6 @@ L’accent est mis sur :
 │    ├── fr/                                 → Pages du site (FR) / Website pages (EN)
 │    ├── en/                                 → Pages du site (FR) / Website pages (EN)
 │    │
-│    ├── facturx-demo/
-│    │   ├── invoice-generator.php           → Point d’entrée de génération de facture (FR) / Invoice generation entry point (EN)
-│    │   ├── invoice-template.php            → Modèle HTML de facture (FR) / Invoice HTML template (EN)
-│    │   ├── facturx-xml-builder.php         → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
-│    │   ├── inject-facturx-xml.py           → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
-│    │   └── direct-generation-engine.php    → Pipeline de génération directe (FR) / Direct generation pipeline (EN)
-│    │
 │    ├── api/
 │    │   ├── facturx-generation-engine.php   → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
 │    │   ├── facturx-xml-builder.php         → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
@@ -151,6 +144,23 @@ L’accent est mis sur :
      │
      ├── LICENCE.md                         → Conditions d’utilisation et cadre légal (FR)
      ├── LICENSE.md                         → Terms of use and legal framework (EN)
+     │
+     ├── facturx-watcher/
+     │   │
+     │   ├── monitor.py                     → Script principal (FR) / Main monitoring script (EN)
+     │   ├── xsd_analyzer.py                → Analyse du Changelog_XSD.md (FR) / Changelog_XSD.md analyzer (EN)
+     │   ├── pdf_analyzer.py                → Analyse comparative des PDF Chorus Pro (FR) / Chorus Pro PDF comparison analyzer (EN)
+     │   ├── notifier.php                   → Envoi des alertes et sauvegarde des rapports (FR) / Alert email sender and report saver (EN)
+     │   ├── state.json                     → État actuel et précédent (FR) / Current and previous state (EN)
+     │   ├── facturx_builder.php            → Générateur XML Factur-X utilisé pour l'analyse (FR) / Factur-X XML generator used for analysis (EN)
+     │   ├── mail.php                       → Fonction d'envoi des emails avec pièces jointes (FR) / Email sending function with attachments (EN)
+     │   │
+     │   ├── downloads/                     → ZIP téléchargés (FR) / Downloaded ZIP archives (EN)
+     │   ├── temp/                          → ZIP extraits (FR) / Extracted ZIP archives (EN)
+     │   │   ├── v{N}/
+     │   │   └── v{N-1}/
+     │   │
+     │   └── reports/                       → Rapports texte (FR) / Text reports (EN)
      │
      └── docs/
          ├── SYSTEM-OVERVIEW_FR.md          → Vue d’ensemble du système (FR)
