@@ -30,6 +30,7 @@ Ce dépôt contient le site public de **Palks Studio**, qui combine :
 - une boutique numérique légère côté serveur  
 - un système autonome de facturation PDF  
 - une distribution sécurisée de fichiers téléchargeables par token  
+- un assistant local bilingue FR / EN avec base de connaissances JSON et réponses déterministes
 
 L’ensemble fonctionne sans CMS, sans base de données et sans dépendance SaaS inutile,  
 en s’appuyant uniquement sur des fichiers plats (JSON/CSV) et des scripts PHP minimalistes.  
@@ -171,6 +172,20 @@ L’accent est mis sur :
          └── README.md                      → General overview (EN)
 ```
 
+```
+chatbot.com
+│
+├── data/
+│   └── knowledge_base.json  → Base de connaissances FR / EN du chatbot
+│
+├── chatbot.php              → Point d'entrée PHP entre le site et le chatbot
+├── chatbot.py               → Lancement / interface Python du chatbot
+├── demo-en.html             → Page de démonstration anglaise
+├── demo-fr.html             → Page de démonstration française
+├── engine.py                → Logique principale, matching, fallbacks et réponses
+├── storage.py               → Gestion du stockage local
+└── widget.html              → Interface du widget chatbot intégrable
+```
 
 ---
 
@@ -182,7 +197,8 @@ Le système repose sur une architecture volontairement minimale :
 - Endpoints PHP côté serveur  
 - Stockage fichiers plats (JSON / CSV)  
 - Stripe comme processeur de paiement  
-- Aucune base de données
+- Aucune base de données  
+- Assistant local Python avec base de connaissances JSON FR / EN
 
 Objectifs techniques :  
 
@@ -258,6 +274,20 @@ Le pipeline de démonstration comprend :
 - injection du XML dans le PDF
 
 Pour une utilisation professionnelle, une intégration complète et conforme peut être mise en place selon les besoins.
+
+---
+
+### Assistant local bilingue
+
+Le site intègre un assistant local FR / EN conçu pour orienter les visiteurs dans les services, systèmes, ressources et contenus de Palks Studio.
+
+Le moteur fonctionne sans service d'intelligence artificielle externe. Il s'appuie sur une base de connaissances JSON locale, des correspondances de formulations et un système de fallbacks ciblés par mots-clés.
+
+Lorsqu'une formulation précise est reconnue, la réponse correspondante est utilisée. Dans le cas contraire, certains mots-clés peuvent orienter la requête vers une réponse de référence définie dans la base de connaissances.
+
+Le système distingue également les formulations françaises et anglaises afin de retourner la réponse correspondante. Lorsque certains termes sont identiques dans les deux langues, la langue de l'interface sert de référence.
+
+L'assistant peut être utilisé directement sur le site ou intégré sous forme de widget.
 
 ---
 
