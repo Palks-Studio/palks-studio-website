@@ -30,6 +30,7 @@ This repository contains the public website of Palks Studio, which combines:
 - a lightweight server-side digital storefront  
 - an autonomous PDF invoicing system  
 - and secure token-based delivery of downloadable files  
+- a local bilingual FR / EN assistant with a JSON knowledge base and deterministic responses
 
 The system operates without a CMS, without a database, and without unnecessary SaaS dependencies,  
 relying solely on flat files (JSON/CSV) and minimalist PHP scripts.  
@@ -171,6 +172,20 @@ The emphasis is placed on:
          └── README.md                      → General overview (EN)
 ```
 
+```
+chatbot.com
+│
+├── data/
+│   └── knowledge_base.json  → Chatbot FR / EN knowledge base
+│
+├── chatbot.php              → PHP entry point between the website and the chatbot
+├── chatbot.py               → Chatbot Python launcher / interface
+├── demo-en.html             → English demo page
+├── demo-fr.html             → French demo page
+├── engine.py                → Main logic, matching, fallbacks and responses
+├── storage.py               → Local storage management
+└── widget.html              → Embeddable chatbot widget interface
+```
 
 ---
 
@@ -182,7 +197,8 @@ The system follows a deliberately minimal architecture:
 - PHP backend endpoints  
 - Flat file storage (JSON / CSV)  
 - Stripe as payment processor  
-- No database layer
+- No database layer  
+- Local Python assistant with a FR / EN JSON knowledge base
 
 Design goals:  
 
@@ -259,6 +275,20 @@ The demo pipeline includes:
 - XML injection into the PDF
 
 For professional use, a complete and compliant integration can be set up according to specific needs.
+
+---
+
+### Local bilingual assistant
+
+The website includes a local FR / EN assistant designed to guide visitors through Palks Studio's services, systems, resources and content.
+
+The engine runs without relying on an external artificial intelligence service. It uses a local JSON knowledge base, phrase matching and targeted keyword fallbacks.
+
+When a specific phrasing is recognized, the corresponding response is returned. Otherwise, selected keywords can route the request to a predefined reference response in the knowledge base.
+
+The system also distinguishes between French and English phrasing to return the corresponding response. When certain terms are identical in both languages, the interface language is used as the reference.
+
+The assistant can be used directly on the website or integrated as an embeddable widget.
 
 ---
 
