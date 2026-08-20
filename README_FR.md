@@ -77,11 +77,11 @@ L’accent est mis sur :
 │    ├── fr/                                 → Pages du site (FR) / Website pages (EN)
 │    ├── en/                                 → Pages du site (FR) / Website pages (EN)
 │    │
-│    ├── api/
-│    │   ├── facturx-generation-engine.php   → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
-│    │   ├── facturx-xml-builder.php         → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
-│    │   ├── inject-facturx-xml.py           → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
-│    │   └── invoice-template.php            → Modèle HTML de facture (FR) / Invoice HTML template (EN)
+│    ├── processing/
+│    │   ├── document-orchestrator.php       → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
+│    │   ├── xml-builder.php                 → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
+│    │   ├── pdf-xml-injector.py             → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
+│    │   └── document-template.php           → Modèle HTML de facture (FR) / Invoice HTML template (EN)
 │    │
 │    ├── assets/
 │    │   ├── css/
@@ -98,7 +98,7 @@ L’accent est mis sur :
 │    ├── sitemap.xml                         → Plan du site pour indexation (FR) / Sitemap for indexing (EN)
 │    ├── manifest.json                       → Configuration PWA du système (FR) / System PWA configuration (EN)
 │    │
-│    ├── library/
+│    ├── public-pages/
 │    │   ├── contract-client-config-fr.html  → Génération contrat + configuration client (FR)
 │    │   ├── contract-client-config-en.html  → Contract generation + client configuration (EN)
 │    │   ├── contract-template-fr.html       → Template de contrat (FR)
@@ -109,7 +109,7 @@ L’accent est mis sur :
 │    │   ├── payment-success.html            → Page de paiement validé (FR) / Payment success page (EN)
 │    │   └── invoice-template.html           → Template HTML de facture (FR) / Invoice HTML template (EN)
 │    │
-│    └── stripe/
+│    └── payment-provider/
 │        ├── checkout-session.php            → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
 │        ├── payment-webhook.php             → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
 │        └── secure-download.php             → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
@@ -138,10 +138,10 @@ L’accent est mis sur :
      │   ├── invoices/                      → Factures PDF générées (FR) / Generated PDF invoices (EN)
      │   └── accounting-records/            → Journaux comptables CSV (FR) / Accounting CSV records (EN)
      │
-     ├── logs/                              → Journaux système et erreurs (FR) / System logs and errors (EN)
-     ├── phpmailer/                         → Bibliothèque d’envoi email (FR) / Email sending library (EN)
-     ├── stripe-php/                        → SDK Stripe PHP officiel (FR) / Official Stripe PHP SDK (EN)
-     ├── vendor/                            → Dépendances PHP (FR) / PHP dependencies (EN)
+     ├── system-logs/                       → Journaux système et erreurs (FR) / System logs and errors (EN)
+     ├── mail-library/                      → Bibliothèque d’envoi email (FR) / Email sending library (EN)
+     ├── payment-sdk/                       → SDK du prestataire de paiement (FR) / Payment provider SDK (EN)
+     ├── dependencies/                      → Dépendances PHP (FR) / PHP dependencies (EN)
      │
      ├── LICENCE.md                         → Conditions d’utilisation et cadre légal (FR)
      ├── LICENSE.md                         → Terms of use and legal framework (EN)
@@ -198,7 +198,7 @@ Le système repose sur une architecture volontairement minimale :
 - Stockage fichiers plats (JSON / CSV)  
 - Stripe comme processeur de paiement  
 - Aucune base de données  
-- Assistant local Python avec base de connaissances JSON FR / EN
+- Assistant local Python FR / EN sans framework web ni API d'IA externe
 
 Objectifs techniques :  
 
@@ -279,15 +279,27 @@ Pour une utilisation professionnelle, une intégration complète et conforme peu
 
 ### Assistant local bilingue
 
-Le site intègre un assistant local FR / EN conçu pour orienter les visiteurs dans les services, systèmes, ressources et contenus de Palks Studio.
+Le site intègre un assistant local FR / EN conçu pour orienter les visiteurs  
+dans les services, systèmes, ressources et contenus de Palks Studio.
 
-Le moteur fonctionne sans service d'intelligence artificielle externe. Il s'appuie sur une base de connaissances JSON locale, des correspondances de formulations et un système de fallbacks ciblés par mots-clés.
+Le moteur fonctionne sans service d'intelligence artificielle externe,  
+sans framework web Python et sans base de données.
 
-Lorsqu'une formulation précise est reconnue, la réponse correspondante est utilisée. Dans le cas contraire, certains mots-clés peuvent orienter la requête vers une réponse de référence définie dans la base de connaissances.
+L'architecture repose volontairement sur des composants simples :
 
-Le système distingue également les formulations françaises et anglaises afin de retourner la réponse correspondante. Lorsque certains termes sont identiques dans les deux langues, la langue de l'interface sert de référence.
+- interface web statique  
+- point d'entrée PHP  
+- moteur Python exécuté localement  
+- scripts shell pour l'exécution et l'intégration système  
+- base de connaissances JSON locale  
+- stockage fichier  
+- logique déterministe de matching et de fallbacks
 
-L'assistant peut être utilisé directement sur le site ou intégré sous forme de widget.
+Aucun serveur Flask, FastAPI ou service applicatif permanent n'est nécessaire.
+
+Cette architecture permet de conserver un assistant léger, contrôlable  
+et entièrement hébergé sur l'infrastructure du studio, sans dépendance  
+à une API d'IA externe.
 
 ---
 
