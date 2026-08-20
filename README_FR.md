@@ -189,60 +189,59 @@ chatbot.com
 
 ---
 
-## Architecture (résumé)
+## Résumé de l’architecture
 
-Le système repose sur une architecture volontairement minimale :  
+Le système repose sur une architecture volontairement minimale :
 
 - Frontend statique (HTML/CSS)  
 - Endpoints PHP côté serveur  
-- Stockage fichiers plats (JSON / CSV)  
-- Stripe comme processeur de paiement  
-- Aucune base de données  
-- Assistant local Python FR / EN sans framework web ni API d'IA externe
+- Stockage par fichiers plats (JSON / CSV)  
+- Prestataire de paiement externe  
+- Aucune couche de base de données  
+- Assistant local Python FR / EN sans framework web ni API d’IA externe
 
-Objectifs techniques :  
+Objectifs de conception :
 
 - comportement déterministe  
 - traçabilité des opérations  
 - dépendances minimales  
-- maintenabilité long terme
+- maintenabilité à long terme
 
-### Architecture en couches
+### Architecture en couches — rappel
 
-Le système distingue clairement :  
+Le système distingue clairement :
 
 - la façade web publique (`palks-studio.com`)  
-- les points d’ingestion contrôlés (contrat, upload CSV)
+- les points d’ingestion contrôlés (contrat, dépôt CSV)
 
-La présence des formulaires côté site ne signifie  
-pas une exécution de la facturation côté web.
+La présence de formulaires web ne signifie pas  
+que l’exécution de la facturation s’effectue sur la couche web.
 
-Toute génération financière est déclenchée par le webhook Stripe  
-et traitée côté serveur privé.
+Toute génération financière est déclenchée par un événement de confirmation de paiement  
+et traitée côté serveur.
 
 ---
 
 ## Le site Palks Studio (version publique)
 
-Les pages du site présentent :  
+Les pages du site présentent :
 
 - le studio et sa démarche  
-- les ressources proposées  
+- les ressources disponibles  
 - les fondations conceptuelles  
 - les outils techniques développés  
 - les notes techniques et réflexions d’ingénierie  
 - les pages légales et informatives  
-- ainsi que l’accès à la boutique numérique  
-- ainsi qu'un générateur de devis PDF gratuit, bilingue et entièrement côté navigateur.
+- ainsi qu’un générateur de devis PDF gratuit, bilingue et entièrement exécuté dans le navigateur.
 
 Cet outil fonctionne entièrement côté client (JavaScript + jsPDF) et ne transmet  
-aucune donnée à un serveur. Il permet de créer rapidement un devis professionnel  
-avec plusieurs lignes de prestations, calcul automatique HT / TVA / TTC,  
+aucune donnée à un serveur. Il permet de créer rapidement des devis professionnels  
+avec plusieurs lignes de prestations, calcul automatique HT / TVA / TTC  
 et export direct en PDF.
 
 Le générateur est totalement indépendant du pipeline de facturation  
-(Stripe → Webhook → Facture → Token → Téléchargement) et ne crée  
-ni transaction ni archive côté serveur.
+(Paiement → Confirmation → Facture → Token → Téléchargement) et ne crée  
+aucune transaction ni archive côté serveur.
 
 ### Ressources et distribution numérique
 
