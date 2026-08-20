@@ -77,11 +77,11 @@ The emphasis is placed on:
 │    ├── fr/                                 → Pages du site (FR) / Website pages (EN)
 │    ├── en/                                 → Pages du site (FR) / Website pages (EN)
 │    │
-│    ├── api/
-│    │   ├── facturx-generation-engine.php   → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
-│    │   ├── facturx-xml-builder.php         → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
-│    │   ├── inject-facturx-xml.py           → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
-│    │   └── invoice-template.php            → Modèle HTML de facture (FR) / Invoice HTML template (EN)
+│    ├── processing/
+│    │   ├── document-orchestrator.php       → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
+│    │   ├── xml-builder.php                 → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
+│    │   ├── pdf-xml-injector.py             → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
+│    │   └── document-template.php           → Modèle HTML de facture (FR) / Invoice HTML template (EN)
 │    │
 │    ├── assets/
 │    │   ├── css/
@@ -98,7 +98,7 @@ The emphasis is placed on:
 │    ├── sitemap.xml                         → Plan du site pour indexation (FR) / Sitemap for indexing (EN)
 │    ├── manifest.json                       → Configuration PWA du système (FR) / System PWA configuration (EN)
 │    │
-│    ├── library/
+│    ├── public-pages/
 │    │   ├── contract-client-config-fr.html  → Génération contrat + configuration client (FR)
 │    │   ├── contract-client-config-en.html  → Contract generation + client configuration (EN)
 │    │   ├── contract-template-fr.html       → Template de contrat (FR)
@@ -109,7 +109,7 @@ The emphasis is placed on:
 │    │   ├── payment-success.html            → Page de paiement validé (FR) / Payment success page (EN)
 │    │   └── invoice-template.html           → Template HTML de facture (FR) / Invoice HTML template (EN)
 │    │
-│    └── stripe/
+│    └── payment-provider/
 │        ├── checkout-session.php            → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
 │        ├── payment-webhook.php             → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
 │        └── secure-download.php             → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
@@ -138,10 +138,10 @@ The emphasis is placed on:
      │   ├── invoices/                      → Factures PDF générées (FR) / Generated PDF invoices (EN)
      │   └── accounting-records/            → Journaux comptables CSV (FR) / Accounting CSV records (EN)
      │
-     ├── logs/                              → Journaux système et erreurs (FR) / System logs and errors (EN)
-     ├── phpmailer/                         → Bibliothèque d’envoi email (FR) / Email sending library (EN)
-     ├── stripe-php/                        → SDK Stripe PHP officiel (FR) / Official Stripe PHP SDK (EN)
-     ├── vendor/                            → Dépendances PHP (FR) / PHP dependencies (EN)
+     ├── system-logs/                       → Journaux système et erreurs (FR) / System logs and errors (EN)
+     ├── mail-library/                      → Bibliothèque d’envoi email (FR) / Email sending library (EN)
+     ├── payment-sdk/                       → SDK du prestataire de paiement (FR) / Payment provider SDK (EN)
+     ├── dependencies/                      → Dépendances PHP (FR) / PHP dependencies (EN)
      │
      ├── LICENCE.md                         → Conditions d’utilisation et cadre légal (FR)
      ├── LICENSE.md                         → Terms of use and legal framework (EN)
@@ -198,7 +198,7 @@ The system follows a deliberately minimal architecture:
 - Flat file storage (JSON / CSV)  
 - Stripe as payment processor  
 - No database layer  
-- Local Python assistant with a FR / EN JSON knowledge base
+- Local FR / EN Python assistant without a web framework or external AI API
 
 Design goals:  
 
@@ -278,17 +278,29 @@ For professional use, a complete and compliant integration can be set up accordi
 
 ---
 
-### Local bilingual assistant
+### Bilingual local assistant
 
-The website includes a local FR / EN assistant designed to guide visitors through Palks Studio's services, systems, resources and content.
+The website integrates a local FR / EN assistant designed to guide visitors  
+through Palks Studio services, systems, resources and content.
 
-The engine runs without relying on an external artificial intelligence service. It uses a local JSON knowledge base, phrase matching and targeted keyword fallbacks.
+The engine operates without any external AI service,  
+without a Python web framework and without a database.
 
-When a specific phrasing is recognized, the corresponding response is returned. Otherwise, selected keywords can route the request to a predefined reference response in the knowledge base.
+The architecture deliberately relies on simple components:
 
-The system also distinguishes between French and English phrasing to return the corresponding response. When certain terms are identical in both languages, the interface language is used as the reference.
+- static web interface  
+- PHP entry point  
+- locally executed Python engine  
+- shell scripts for execution and system integration  
+- local JSON knowledge base  
+- file-based storage  
+- deterministic matching and fallback logic
 
-The assistant can be used directly on the website or integrated as an embeddable widget.
+No Flask, FastAPI or persistent application server is required.
+
+This architecture keeps the assistant lightweight, controllable  
+and fully hosted on the studio's infrastructure, without relying  
+on an external AI API.
 
 ---
 
