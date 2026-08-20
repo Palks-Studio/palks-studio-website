@@ -191,16 +191,16 @@ chatbot.com
 
 ## Architecture Summary
 
-The system follows a deliberately minimal architecture:  
+The system follows a deliberately minimal architecture:
 
 - Static frontend (HTML/CSS)  
 - PHP backend endpoints  
 - Flat file storage (JSON / CSV)  
-- Stripe as payment processor  
+- External payment processor  
 - No database layer  
 - Local FR / EN Python assistant without a web framework or external AI API
 
-Design goals:  
+Design goals:
 
 - deterministic behavior  
 - traceable operations  
@@ -209,7 +209,7 @@ Design goals:
 
 ### Layered architecture — reminder
 
-The system clearly separates:  
+The system clearly separates:
 
 - the public web facade (`palks-studio.com`)  
 - controlled ingestion points (contract, CSV upload)
@@ -217,15 +217,14 @@ The system clearly separates:
 The presence of web forms does not imply  
 that billing execution occurs on the web layer.
 
-
-All financial generation is triggered by the Stripe webhook  
+All financial generation is triggered by a payment confirmation event  
 and processed server-side.
 
 ---
 
 ## The Palks Studio website (public version)
 
-The site pages present:  
+The site pages present:
 
 - the studio and its approach  
 - the available resources  
@@ -237,11 +236,11 @@ The site pages present:
 
 This tool operates fully client-side (JavaScript + jsPDF) and does not transmit  
 any data to a server. It allows users to quickly create professional quotes  
-with multiple service lines, automatic subtotal / VAT / total calculations,  
+with multiple service lines, automatic subtotal / VAT / total calculations,
 and direct PDF export.
 
 The generator is completely independent from the billing pipeline  
-(Stripe → Webhook → Invoice → Token → Download) and does not create  
+(Payment → Confirmation → Invoice → Token → Download) and does not create  
 any transaction or archive on the server side.
 
 ### Resources and digital distribution
