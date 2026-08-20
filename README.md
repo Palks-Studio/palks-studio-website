@@ -72,7 +72,7 @@ The emphasis is placed on:
 ```
 /palks-studio-website/
 │
-├── palks-studio.com/
+├── web/
 │    │
 │    ├── fr/                                 → Pages du site (FR) / Website pages (EN)
 │    ├── en/                                 → Pages du site (FR) / Website pages (EN)
@@ -115,7 +115,7 @@ The emphasis is placed on:
 │        └── secure-download.php             → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
 │
 │
-└── palks-studio/
+└── private/
      ├── invoice-counter.json               → Compteur persistant de factures (FR) / Persistent invoice counter (EN)
      ├── invoice-counter-reader.php         → Lecture sécurisée du prochain numéro de facture (FR) / Secure invoice counter reader (EN)
      ├── invoice-html-engine.php            → Génération HTML des factures (FR) / Invoice HTML generation (EN)
