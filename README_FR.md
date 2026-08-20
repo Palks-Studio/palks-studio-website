@@ -111,7 +111,7 @@ L’accent est mis sur :
 │    │
 │    └── payment-provider/
 │        ├── checkout-session.php            → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
-│        ├── payment-webhook.php             → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
+│        ├── payment.php                     → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
 │        └── secure-download.php             → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
 │
 │
