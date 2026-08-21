@@ -134,9 +134,18 @@ L’accent est mis sur :
      │   ├── download-activity.log          → Journal des téléchargements réels (FR) / Download activity log (EN)
      │   └── download-tokens.json           → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
      │
-     ├── pdf/
-     │   ├── invoices/                      → Factures PDF générées (FR) / Generated PDF invoices (EN)
-     │   └── accounting-records/            → Journaux comptables CSV (FR) / Accounting CSV records (EN)
+     ├── product-billing/
+     │   ├── templates/
+     │   │    └── billing-template.php      → Modèle HTML de facture (FR) / Billing HTML template (EN)
+     │   │
+     │   ├── billing-documents/             → Factures PDF générées (FR) / Generated billing PDF documents (EN)
+     │   ├── billing-counter.json           → Compteur persistant de factures (FR) / Persistent billing counter (EN)
+     │   ├── counter.php                    → Incrémentation atomique du numéro de facture (FR) / Atomic billing number increment (EN)
+     │   ├── billing-html.php               → Génération HTML des factures (FR) / Billing HTML generation (EN)
+     │   ├── mailer.php                     → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
+     │   ├── pdf-generator.php              → Génération PDF via mPDF (FR) / PDF generation via mPDF (EN)
+     │   ├── facturx-generator.php          → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
+     │   └── accounting-records.csv         → Journaux comptables CSV (FR) / Accounting CSV records (EN)
      │
      ├── system-logs/                       → Journaux système et erreurs (FR) / System logs and errors (EN)
      ├── mail-library/                      → Bibliothèque d’envoi email (FR) / Email sending library (EN)
@@ -196,7 +205,8 @@ Le système repose sur une architecture volontairement minimale :
 - Frontend statique (HTML/CSS)  
 - Endpoints PHP côté serveur  
 - Stockage par fichiers plats (JSON / CSV)  
-- Prestataire de paiement externe  
+- Prestataire de paiement externe utilisé uniquement pour la transaction  
+- Pipeline interne de facturation et génération Factur-X  
 - Aucune couche de base de données  
 - Assistant local Python FR / EN sans framework web ni API d’IA externe
 
@@ -219,6 +229,12 @@ que l’exécution de la facturation s’effectue sur la couche web.
 
 Toute génération financière est déclenchée par un événement de confirmation de paiement  
 et traitée côté serveur.
+
+La génération des factures et des documents Factur-X est entièrement gérée par le système interne Palks Studio.
+
+Le prestataire de paiement intervient uniquement pour la gestion de la transaction et la confirmation du paiement.
+
+La création de la facture PDF, la génération du fichier XML Factur-X conforme à la norme EN16931, l'association des données de facturation et l'archivage des documents sont entièrement gérés par le pipeline de facturation interne, indépendamment du système de facturation du prestataire de paiement.
 
 ---
 
