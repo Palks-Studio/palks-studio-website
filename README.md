@@ -134,9 +134,18 @@ The emphasis is placed on:
      │   ├── download-activity.log          → Journal des téléchargements réels (FR) / Download activity log (EN)
      │   └── download-tokens.json           → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
      │
-     ├── pdf/
-     │   ├── invoices/                      → Factures PDF générées (FR) / Generated PDF invoices (EN)
-     │   └── accounting-records/            → Journaux comptables CSV (FR) / Accounting CSV records (EN)
+     ├── product-billing/
+     │   ├── templates/
+     │   │    └── billing-template.php      → Modèle HTML de facture (FR) / Billing HTML template (EN)
+     │   │
+     │   ├── billing-documents/             → Factures PDF générées (FR) / Generated billing PDF documents (EN)
+     │   ├── billing-counter.json           → Compteur persistant de factures (FR) / Persistent billing counter (EN)
+     │   ├── counter.php                    → Incrémentation atomique du numéro de facture (FR) / Atomic billing number increment (EN)
+     │   ├── billing-html.php               → Génération HTML des factures (FR) / Billing HTML generation (EN)
+     │   ├── mailer.php                     → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
+     │   ├── pdf-generator.php              → Génération PDF via mPDF (FR) / PDF generation via mPDF (EN)
+     │   ├── facturx-generator.php          → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
+     │   └── accounting-records.csv         → Journaux comptables CSV (FR) / Accounting CSV records (EN)
      │
      ├── system-logs/                       → Journaux système et erreurs (FR) / System logs and errors (EN)
      ├── mail-library/                      → Bibliothèque d’envoi email (FR) / Email sending library (EN)
@@ -196,7 +205,8 @@ The system follows a deliberately minimal architecture:
 - Static frontend (HTML/CSS)  
 - PHP backend endpoints  
 - Flat file storage (JSON / CSV)  
-- External payment processor  
+- External payment processor for transactions only  
+- Internal billing pipeline for invoice and Factur-X generation  
 - No database layer  
 - Local FR / EN Python assistant without a web framework or external AI API
 
@@ -219,6 +229,12 @@ that billing execution occurs on the web layer.
 
 All financial generation is triggered by a payment confirmation event  
 and processed server-side.
+
+The generation of invoices and Factur-X documents is entirely handled by the internal Palks Studio system.
+
+The payment provider is only responsible for transaction processing and payment confirmation.
+
+The creation of the PDF invoice, the generation of the Factur-X XML file compliant with EN16931, the association of billing data, and document archiving are handled by the internal billing pipeline, without relying on the payment provider's invoicing engine.
 
 ---
 
