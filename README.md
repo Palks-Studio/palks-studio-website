@@ -1,15 +1,18 @@
 <p align="center">
-  <img src="docs/images/palks_studio_en.png"
-       alt="Palks Studio homepage — static-first development and automation services overview"
-       width="1200">
+  <img src="docs/images/Palks_Studio.png" alt="Palks Studio" width="1200">
 </p>
 
 > 🇬🇧 English | [🇫🇷 Français](./README_FR.md)
 
-![License](https://img.shields.io/badge/License-LICENSE.md-lightgreen.svg)
-![Static Website](https://img.shields.io/badge/Type-Static%20Website-151b1c?style=flat)
-![Documentation](https://img.shields.io/badge/Focus-Documentation-0095b1?style=flat)
-![Bilingual](https://img.shields.io/badge/Lang-FR%20%2F%20EN-0a5645?style=flat)
+![Backend](https://img.shields.io/badge/Backend-Architecture-0A66C2?style=flat)
+![API](https://img.shields.io/badge/API-Integration-0095b1?style=flat)
+![Electronic Invoicing](https://img.shields.io/badge/Electronic-Invoicing-27ae60?style=flat)
+![Automation](https://img.shields.io/badge/Automation-Workflows-27ae60?style=flat)
+![Factur-X](https://img.shields.io/badge/Factur--X-EN16931-orange?style=flat)
+![PHP](https://img.shields.io/badge/PHP-8A2BE2?style=flat)
+![Remote](https://img.shields.io/badge/Remote-Worldwide-success?style=flat)
+![FR / EN](https://img.shields.io/badge/Languages-FR%20%7C%20EN-blue?style=flat)
+[![Malt](https://img.shields.io/badge/Malt-Profile-FF4F8B?style=flat)](https://www.malt.fr/profile/anthonyleignel)
 [![YouTube](https://img.shields.io/badge/YouTube-@Palks__Studio-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@Palks_Studio)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-@Palks__Studio-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palks-studio/)
 
@@ -19,380 +22,188 @@
   </a>
 </p>
 
-# Palks Studio — Static site + digital storefront  
+# Palks Studio
 
-> This repository is a technical presentation and documentation repository.  
+> This repository is a presentation.  
 > It does not contain downloadable source code or production files.
 
-This repository contains the public website of Palks Studio, which combines:  
+## Backend Development and Business Systems
 
-- a clean, tracking-free static HTML website  
-- a lightweight server-side digital storefront  
-- an autonomous PDF invoicing system  
-- and secure token-based delivery of downloadable files  
-- a local bilingual FR / EN assistant with a JSON knowledge base and deterministic responses
+Design and development of backend systems, business applications and workflow automation tailored to real-world business needs.
 
-The system operates without a CMS, without a database, and without unnecessary SaaS dependencies,  
-relying solely on flat files (JSON/CSV) and minimalist PHP scripts.  
-
-The repository includes:  
-
-- the public website (pages, styles, images, content)  
-- payment and digital delivery components  
-- as well as publicly accessible documentation  
-with the aim of clarity, readability, and transparency  
-
-This repository is not a turnkey product, a framework, or a software library.  
-It serves as a reference artifact to understand the approach,  
-tools, and technical choices carried by Palks Studio.  
+Palks Studio helps businesses simplify existing environments by developing new tools, connecting applications through APIs, automating repetitive processes or improving existing backend systems, while keeping architectures maintainable and dependencies under control.
 
 ---
 
-## About Palks Studio  
+## About
 
-Palks Studio designs technical tools, documentation structures,  
-and working environments intended to be:  
+Palks Studio is an independent development studio focused on backend systems, business software and technical automation.
 
-- readable  
-- understandable  
-- autonomous  
-- maintainable over time  
-
-The emphasis is placed on:  
-
-- functional simplicity  
-- control of dependencies  
-- transparency of technical choices  
-- durability rather than trends  
+Each project is designed around the same principles: simplicity, maintainability, long-term reliability and full control over data and infrastructure.
 
 ---
 
-## Project structure
+## Core Expertise
 
-```
-/palks-studio-website/
-│
-├── web/
-│    │
-│    ├── fr/                                 → Pages du site (FR) / Website pages (EN)
-│    ├── en/                                 → Pages du site (FR) / Website pages (EN)
-│    │
-│    ├── processing/
-│    │   ├── document-orchestrator.php       → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
-│    │   ├── xml-builder.php                 → Construction du XML Factur-X (FR) / Factur-X XML builder (EN)
-│    │   ├── pdf-xml-injector.py             → Injection du XML dans le PDF (FR) / XML injection into PDF (EN)
-│    │   ├── countries-list.php              → Liste des pays disponibles (FR) / Available countries list (EN)
-│    │   └── document-template.php           → Modèle HTML de facture (FR) / Invoice HTML template (EN)
-│    │
-│    ├── assets/
-│    │   ├── brand/                          → Identité visuelle Palks Studio pour facturation (FR) / Palks Studio brand identity for invoicing (EN)
-│    │   ├── media/                          → Médias et contenus de démonstration (FR) / Media and demonstration content (EN)
-│    │   ├── lib/
-│    │   │   └── pdf-client.min.js           → Bibliothèque JavaScript de génération de devis PDF (FR) / JavaScript library for PDF quote generation (EN)
-│    │   │
-│    │   ├── styles/
-│    │   │   ├── main.css                    → Feuille de styles globale (FR) / Global stylesheet (EN)
-│    │   │   └── ui.css                      → Feuille de styles interactive (FR) / Interactive stylesheet (EN)
-│    │   │
-│    │   └── images/                         → Images et visuels (FR) / Images and visuals (EN)
-│    │       ├── content/                    → Images des articles (FR) / Article images (EN)
-│    │       ├── fav/                        → Favicons (FR) / Favicons (EN)
-│    │       ├── vectors/                    → Icônes SVG (FR) / SVG icons (EN)
-│    │       └── technical/                  → Images des notes techniques (FR) / Technical notes images (EN)
-│    │
-│    ├── batch-downloads/
-│    │   └── batch-download-access.php       → Point d'accès aux téléchargements batch (FR) / Batch download access endpoint (EN)
-│    │
-│    ├── documentation/                      → Documents légaux en consultation libre (FR) / Legal documents available for free consultation (EN)
-│    ├── store/                              → Fichiers produits numériques (FR) / Digital product files (EN)
-│    ├── contract-pdf-generator.php          → Backend génération PDF (FR) / PDF generation backend (EN)
-│    ├── batch-upload-engine.php             → Moteur de traitement du formulaire CSV (FR) / CSV upload form processing engine (EN)
-│    ├── robots.txt                          → Règles pour moteurs de recherche (FR) / Search engine directives (EN)
-│    ├── sitemap.xml                         → Plan du site pour indexation (FR) / Sitemap for indexing (EN)
-│    ├── manifest.json                       → Configuration PWA du système (FR) / System PWA configuration (EN)
-│    │
-│    ├── public-pages/
-│    │   ├── contract-client-config-fr.html  → Génération contrat + configuration client (FR)
-│    │   ├── contract-client-config-en.html  → Contract generation + client configuration (EN)
-│    │   ├── contract-template-fr.html       → Template de contrat (FR)
-│    │   ├── contract-template-en.html       → Contract template (EN)
-│    │   ├── batch-upload-fr.html            → Formulaire d’envoi CSV client (FR)
-│    │   ├── batch-upload-en.html            → Client CSV upload form (EN)
-│    │   ├── payment-cancel.html             → Page d’annulation de paiement (FR)/ Payment cancellation page (EN)
-│    │   └── payment-success.html            → Page de paiement validé (FR) / Payment success page (EN)
-│    │
-│    └── payment-provider/
-│        ├── checkout-session.php            → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
-│        ├── payment.php                     → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
-│        └── secure-download.php             → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
-│
-│
-└── private/
-     ├── transactional-mailer.php           → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
-     ├── system-config.php                  → Configuration centralisée des chemins et variables système (FR) / Centralized system paths and variables configuration (EN)
-     ├── rate-limit-storage.json            → Stockage des limitations de requêtes IP (FR) / IP request rate limit storage (EN)
-     │
-     ├── config/
-     │   └── download-config.php            → Configuration centrale des téléchargements (FR) / Central download configuration (EN)
-     │
-     ├── cron-task/
-     │   └── cleanup-expired-data.php       → Nettoyage automatique des journaux et fichiers expirés (FR) / Automatic cleanup of logs and expired files (EN)
-     │
-     ├── tokens/
-     │   ├── download-activity.log          → Journal des téléchargements réels (FR) / Download activity log (EN)
-     │   └── download-tokens.json           → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
-     │
-     ├── product/
-     │   ├── templates/
-     │   │    └── template.php              → Modèle HTML de facture (FR) / Billing HTML template (EN)
-     │   │
-     │   ├── billing-documents/             → Factures PDF générées (FR) / Generated billing PDF documents (EN)
-     │   ├── billing-counter.json           → Compteur persistant de factures (FR) / Persistent billing counter (EN)
-     │   ├── counter.php                    → Incrémentation atomique du numéro de facture (FR) / Atomic billing number increment (EN)
-     │   ├── billing-html.php               → Génération HTML des factures (FR) / Billing HTML generation (EN)
-     │   ├── mailer.php                     → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
-     │   ├── pdf-generator.php              → Génération PDF via mPDF (FR) / PDF generation via mPDF (EN)
-     │   ├── facturx-generator.php          → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
-     │   └── accounting-records.csv         → Journaux comptables CSV (FR) / Accounting CSV records (EN)
-     │
-     ├── system-logs/                       → Journaux système et erreurs (FR) / System logs and errors (EN)
-     ├── mail-library/                      → Bibliothèque d’envoi email (FR) / Email sending library (EN)
-     ├── payment-sdk/                       → SDK du prestataire de paiement (FR) / Payment provider SDK (EN)
-     ├── dependencies/                      → Dépendances PHP (FR) / PHP dependencies (EN)
-     │
-     ├── LICENCE.md                         → Conditions d’utilisation et cadre légal (FR)
-     ├── LICENSE.md                         → Terms of use and legal framework (EN)
-     │
-     ├── facturx-watcher/
-     │   │
-     │   ├── monitor.py                     → Script principal (FR) / Main monitoring script (EN)
-     │   ├── xsd_analyzer.py                → Analyse du Changelog_XSD.md (FR) / Changelog_XSD.md analyzer (EN)
-     │   ├── pdf_analyzer.py                → Analyse comparative des PDF Chorus Pro (FR) / Chorus Pro PDF comparison analyzer (EN)
-     │   ├── notifier.php                   → Envoi des alertes et sauvegarde des rapports (FR) / Alert email sender and report saver (EN)
-     │   ├── state.json                     → État actuel et précédent (FR) / Current and previous state (EN)
-     │   ├── facturx_builder.php            → Générateur XML Factur-X utilisé pour l'analyse (FR) / Factur-X XML generator used for analysis (EN)
-     │   ├── mail.php                       → Fonction d'envoi des emails avec pièces jointes (FR) / Email sending function with attachments (EN)
-     │   │
-     │   ├── downloads/                     → ZIP téléchargés (FR) / Downloaded ZIP archives (EN)
-     │   ├── temp/                          → ZIP extraits (FR) / Extracted ZIP archives (EN)
-     │   │   ├── v{N}/
-     │   │   └── v{N-1}/
-     │   │
-     │   └── reports/                       → Rapports texte (FR) / Text reports (EN)
-     │
-     └── docs/
-         ├── VUE_D_ENSEMBLE.md         → Vue d’ensemble du système (FR)
-         ├── OVERVIEW.md               → System Overview (EN)
-         ├── FACTURATION.md            → Gestion de la facturation (FR)
-         ├── INVOICES.md               → Billing Management (EN)
-         ├── PROJECT-OVERVIEW_FR.md    → Vue d’ensemble du projet (FR)
-         ├── PROJECT-OVERVIEW.md       → Project Overview (EN)
-         ├── README_FR.md              → Présentation générale (FR)
-         └── README.md                 → General Overview (EN)
-```
+- Backend Systems Development  
+- Business Applications  
+- API Design & Integration  
+- Workflow Automation  
+- Electronic Invoicing (Factur-X / EN16931)  
+- Document Generation (PDF, Factur-X)  
+- Payment Integration & Event Handling  
+- Application & Server Security
 
-```
-chatbot.com
-│
-├── data/
-│   └── knowledge_base.json  → Chatbot FR / EN knowledge base
-│
-├── chatbot.php              → PHP entry point between the website and the chatbot
-├── chatbot.py               → Chatbot Python launcher / interface
-├── demo-en.html             → English demo page
-├── demo-fr.html             → French demo page
-├── engine.py                → Main logic, matching, fallbacks and responses
-├── storage.py               → Local storage management
-└── widget.html              → Embeddable chatbot widget interface
-```
+### Technologies
+
+PHP • Python • JavaScript
+
+### Working
+
+🌍 Remote • 🇫🇷 French • 🇬🇧 English
 
 ---
 
-## Architecture Summary
+## Examples of Projects
 
-The system follows a deliberately minimal architecture:
+The projects below illustrate different systems designed and developed by Palks Studio: business tools, backend systems, automation, data processing and electronic invoicing.
 
-- Static frontend (HTML/CSS)  
-- PHP backend endpoints  
-- Flat file storage (JSON / CSV)  
-- External payment processor for transactions only  
-- Internal billing pipeline for invoice and Factur-X generation  
-- No database layer  
-- Local FR / EN Python assistant without a web framework or external AI API
+### Billing System
 
-Design goals:
+Complete electronic invoicing system deployed directly on the client’s infrastructure:  
 
-- deterministic behavior  
-- traceable operations  
-- minimal dependencies  
-- long-term maintainability
+- quote → signature → invoice → payment confirmation  
+- Factur-X / EN16931 compliant invoice generation  
+- PDF generation (client + server)  
+- structured archiving without database  
+- secure numbering and traceability  
+- automatic email sending  
+- bilingual FR / EN interface
 
-### Layered architecture — reminder
+This project illustrates the design of a complete business system combining business logic, document generation, automation, traceability and data management within an autonomous architecture.
 
-The system clearly separates:
+### Candidate System
 
-- the public web facade (`palks-studio.com`)  
-- controlled ingestion points (contract, CSV upload)
+Autonomous recruitment system with automatic scoring, deployed directly on the client's infrastructure:  
 
-The presence of web forms does not imply  
-that billing execution occurs on the web layer.
+- candidate form → scoring → dashboard → export  
+- deterministic 3-level scoring: section, question, answer  
+- configurable penalties per campaign  
+- multi-campaign management without touching the code  
+- JSON storage, no database  
+- automatic emails (confirmation + closure)  
+- bilingual interface FR / EN
 
-All financial generation is triggered by a payment confirmation event  
-and processed server-side.
+Designed to streamline recruitment workflows while keeping full control over evaluation criteria, candidate data and infrastructure.
 
-The generation of invoices and Factur-X documents is entirely handled by the internal Palks Studio system.
+[View the System](https://palks-studio.com/en/recruitment-without-saas)
 
-The payment provider is only responsible for transaction processing and payment confirmation.
+### Data Collection System
 
-The creation of the PDF invoice, the generation of the Factur-X XML file compliant with EN16931, the association of billing data, and document archiving are handled by the internal billing pipeline, without relying on the payment provider's invoicing engine.
+Autonomous data collection system designed to run locally or on dedicated infrastructure:
 
-### Associated internal systems
+- multi-source searches (DuckDuckGo, Bing, Qwant)  
+- website, email and phone number extraction  
+- data cleaning, normalization and validation  
+- automatic duplicate removal  
+- contacted prospect tracking  
+- CSV and JSON exports  
+- integrated web interface  
+- local-first architecture with limited external dependencies
 
-The project relies on several specialized components:
+Designed to collect, organize and export structured business data while maintaining full control over infrastructure and collected information.
 
-- a browser-side PDF quote generator, independent from the billing system  
-- a PDF / Factur-X invoice generation engine  
-- an automated billing system triggered by payment events  
-- a batch processing system for grouped operations  
-- a technical watcher dedicated to monitoring Factur-X related changes
+Available delivery options:
 
-These components are separated in order to maintain a modular architecture, reduce dependencies, and simplify long-term maintenance.
+- ZIP package with installation documentation  
+- server deployment on request
 
----
-
-## The Palks Studio website (public version)
-
-The site pages present:
-
-- the studio and its approach  
-- the available resources  
-- the conceptual foundations  
-- the technical tools developed  
-- the technical notes and engineering reflections  
-- the legal and informational pages  
-- as well as a free bilingual PDF quote generator that runs entirely in the browser.
-
-This tool operates fully client-side (JavaScript + jsPDF) and does not transmit  
-any data to a server. It allows users to quickly create professional quotes  
-with multiple service lines, automatic subtotal / VAT / total calculations,
-and direct PDF export.
-
-The generator is completely independent from the billing pipeline  
-(Payment → Confirmation → Invoice → Token → Download) and does not create  
-any transaction or archive on the server side.
-
-### Resources and digital distribution
-
-Some resources are provided as documents, archives, or downloadable files,  
-particularly when the content includes:  
-
-- multiple files  
-- complete structures  
-- examples or educational materials  
-- reusable tools or templates  
-
-These elements are grouped in dedicated folders to preserve  
-repository clarity and deliverable traceability.
-
-File distribution is handled via a secure system based on temporary,  
-single-use links, logged on the server side.
+[View the System](https://palks-studio.com/en/data-collection)
 
 ---
 
-### Factur-X Demo
+## Other custom backend systems
 
-A Factur-X invoice generation demo is available on the site.
+- internal tools and business workflows  
+- automation of recurring tasks and processing  
+- PDF generation and document processing  
+- document systems and structured archiving  
+- payment system integration and secure processing  
+- database-free backend systems  
+- internal interfaces and batch processing  
+- deployment on client-owned infrastructure
 
-This demo is intentionally limited to ensure service stability and prevent abuse.
+### Automation Finance
 
-The demo pipeline includes:  
+Batch invoicing system based on Factur-X (EN16931):  
 
-- HTML invoice template rendering  
-- Factur-X XML construction (EN16931 compliant)  
-- XML injection into the PDF
+- automatic generation from CSV  
+- structured invoice production  
+- full archiving and traceability  
+- secure delivery via token  
+- reproducible batch processing
 
-For professional use, a complete and compliant integration can be set up according to specific needs.
+Used to automate recurring invoicing workflows.
 
----
-
-### Bilingual local assistant
-
-The website integrates a local FR / EN assistant designed to guide visitors  
-through Palks Studio services, systems, resources and content.
-
-The engine operates without any external AI service,  
-without a Python web framework and without a database.
-
-The architecture deliberately relies on simple components:
-
-- static web interface  
-- PHP entry point  
-- locally executed Python engine  
-- shell scripts for execution and system integration  
-- local JSON knowledge base  
-- file-based storage  
-- deterministic matching and fallback logic
-
-No Flask, FastAPI or persistent application server is required.
-
-This architecture keeps the assistant lightweight, controllable  
-and fully hosted on the studio's infrastructure, without relying  
-on an external AI API.
+[View the Repository](https://github.com/Palks-Studio/automation-system)
 
 ---
 
-## What this repository is
+## Additional tools
 
-- A public static site + lightweight digital storefront  
-- A technical and documentary showcase  
-- A public reference point  
-- A support for understanding  
-- A demonstration of structure and method  
-- A concrete example of a sober architecture without CMS or database  
-- as well as a free PDF quote generator, bilingual FR/EN, running entirely in the browser
+**PDF Payment Stamping Engine**  
+Tool for processing invoices in batch, integrated into Automation Finance workflows.
 
----
+- ZIP import  
+- automatic PDF detection  
+- generation of stamped (paid) invoices  
+- individual or batch export
 
-## What this repository is not
+[View the Repository](https://github.com/Palks-Studio/invoice-stamper)
 
-- An e-commerce framework  
-- A SaaS platform  
-- A generic turnkey product  
-- A software library  
-- A support or contractual update space  
 
-Keys, secrets, and certain production paths are not exposed here.
+### Other tools
 
----
+- quote generator (100% browser-based)  
+- factur-X electronic invoicing demonstration system  
+- static website foundations (HTML/CSS)  
+- local chatbots (Flask)  
+- documentation frameworks  
+- development environment configurations
 
-## Design Principles
+[View the Resources](https://palks-studio.com/en/resources)
 
-Palks Studio follows a small set of consistent principles:  
+These projects illustrate different approaches implemented by Palks Studio: backend development, automation, data processing, document generation, security, integration and deployment.
 
-- simplicity over abstraction  
-- transparency over automation  
-- autonomy over dependency  
-- readability over optimization  
-- long-term stability over trends
+The systems presented here are technical projects and do not necessarily represent services currently offered by the studio.
+
+[![Contact](https://img.shields.io/badge/Contact-0095b1?style=flat)](https://palks-studio.com/en/contact)
 
 ---
 
-## Transparency and approach
+## Who it's for
 
-Palks Studio chooses to:  
-
-- seriously document its projects  
-- explain choices and limits  
-- avoid vague promises  
-- not hide work behind marketing  
-- prioritize readability and traceability over complexity  
-
-The code, structures, and documentation are designed to be understood  
-before any decision of use or purchase.
-
-This repository fully participates in this transparency approach.
+- freelancers and independent professionals  
+- artisans and small businesses  
+- SMEs and operational teams  
+- businesses looking for autonomous systems with fewer dependencies  
+- technical projects requiring simple, reliable, and maintainable tools
 
 ---
 
-© Palks Studio — see LICENSE.md  
+## Approach
+
+- business-driven architectures  
+- controlled dependencies  
+- simplicity before complexity  
+- predictable and maintainable systems  
+- long-term reliability  
+- full control over data and infrastructure
+
+Every system presented here follows the same philosophy: build software that remains understandable, maintainable and reliable over time.
+
+The objective is not to add complexity, but to remove unnecessary layers whenever possible.
+
+Whenever appropriate, systems are designed to run directly on the client's infrastructure, reducing external dependencies while preserving portability and long-term control.
+
 - https://palks-studio.com
