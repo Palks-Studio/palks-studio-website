@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/Palks_Studio.png" alt="Palks Studio" width="1200">
+  <img src="docs/images/palks_studio_fr.png" alt="Palks Studio" width="1200">
 </p>
 
 > 🇫🇷 Français | [🇬🇧 English](./README.md)
