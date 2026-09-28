@@ -19,7 +19,7 @@
   </a>
 </p>
 
-# Palks Studio — Public Website and Technical Systems
+# Palks Studio: Public Website and Technical Systems
 
 > This repository provides a technical presentation and documentation of the project.  
 > It does not contain downloadable source code or production files.
