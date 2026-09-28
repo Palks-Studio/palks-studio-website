@@ -145,73 +145,73 @@ L’accent est mis sur :
 │        └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
 │
 └── private/
-     ├── transactional-mailer.php           → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
-     ├── system-config.php                  → Configuration centralisée des chemins et variables système (FR) / Centralized system paths and variables configuration (EN)
-     ├── rate-limit-storage.json            → Stockage des limitations de requêtes IP (FR) / IP request rate limit storage (EN)
+     ├── transactional-mailer.php            → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
+     ├── system-config.php                   → Configuration centralisée des chemins et variables système (FR) / Centralized system paths and variables configuration (EN)
+     ├── rate-limit-storage.json             → Stockage des limitations de requêtes IP (FR) / IP request rate limit storage (EN)
      │
      ├── config/
-     │   └── download-config.php            → Configuration centrale des téléchargements (FR) / Central download configuration (EN)
+     │   └── download-config.php             → Configuration centrale des téléchargements (FR) / Central download configuration (EN)
      │
      ├── cron-task/
-     │   └── cleanup-expired-data.php       → Nettoyage automatique des journaux et fichiers expirés (FR) / Automatic cleanup of logs and expired files (EN)
+     │   └── cleanup-expired-data.php        → Nettoyage automatique des journaux et fichiers expirés (FR) / Automatic cleanup of logs and expired files (EN)
      │
      ├── tokens/
-     │   ├── download-activity.log          → Journal des téléchargements réels (FR) / Download activity log (EN)
-     │   └── download-tokens.json           → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
+     │   ├── download-activity.log           → Journal des téléchargements réels (FR) / Download activity log (EN)
+     │   └── download-tokens.json            → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
      │
      ├── product/
      │   ├── templates/
-     │   │    └── template.php              → Modèle HTML de facture (FR) / Billing HTML template (EN)
+     │   │    └── template.php               → Modèle HTML de facture (FR) / Billing HTML template (EN)
      │   │
-     │   ├── billing-documents/             → Factures PDF générées (FR) / Generated billing PDF documents (EN)
-     │   ├── billing-counter.json           → Compteur persistant de factures (FR) / Persistent billing counter (EN)
-     │   ├── counter.php                    → Incrémentation atomique du numéro de facture (FR) / Atomic billing number increment (EN)
-     │   ├── billing-html.php               → Génération HTML des factures (FR) / Billing HTML generation (EN)
-     │   ├── mailer.php                     → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
-     │   ├── pdf-generator.php              → Génération PDF via mPDF (FR) / PDF generation via mPDF (EN)
-     │   ├── facturx-generator.php          → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
-     │   └── accounting-records.csv         → Journaux comptables CSV (FR) / Accounting CSV records (EN)
+     │   ├── billing-documents/              → Factures PDF générées (FR) / Generated billing PDF documents (EN)
+     │   ├── billing-counter.json            → Compteur persistant de factures (FR) / Persistent billing counter (EN)
+     │   ├── counter.php                     → Incrémentation atomique du numéro de facture (FR) / Atomic billing number increment (EN)
+     │   ├── billing-html.php                → Génération HTML des factures (FR) / Billing HTML generation (EN)
+     │   ├── mailer.php                      → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
+     │   ├── pdf-generator.php               → Génération PDF via mPDF (FR) / PDF generation via mPDF (EN)
+     │   ├── facturx-generator.php           → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
+     │   └── accounting-records.csv          → Journaux comptables CSV (FR) / Accounting CSV records (EN)
      │
-     ├── system-logs/                       → Journaux système et erreurs (FR) / System logs and errors (EN)
-     ├── mail-library/                      → Bibliothèque d’envoi email (FR) / Email sending library (EN)
-     ├── payment-sdk/                       → SDK du prestataire de paiement (FR) / Payment provider SDK (EN)
-     ├── dependencies/                      → Dépendances PHP (FR) / PHP dependencies (EN)
+     ├── system-logs/                        → Journaux système et erreurs (FR) / System logs and errors (EN)
+     ├── mail-library/                       → Bibliothèque d’envoi email (FR) / Email sending library (EN)
+     ├── payment-sdk/                        → SDK du prestataire de paiement (FR) / Payment provider SDK (EN)
+     ├── dependencies/                       → Dépendances PHP (FR) / PHP dependencies (EN)
      │
-     ├── LICENCE.md                         → Conditions d’utilisation et cadre légal (FR)
-     ├── LICENSE.md                         → Terms of use and legal framework (EN)
+     ├── LICENCE.md                          → Conditions d’utilisation et cadre légal (FR)
+     ├── LICENSE.md                          → Terms of use and legal framework (EN)
      │
      ├── facturx-watcher/
      │   │
-     │   ├── monitor.py                     → Script principal (FR) / Main monitoring script (EN)
-     │   ├── xsd_analyzer.py                → Analyse du Changelog_XSD.md (FR) / Changelog_XSD.md analyzer (EN)
-     │   ├── pdf_analyzer.py                → Analyse comparative des PDF Chorus Pro (FR) / Chorus Pro PDF comparison analyzer (EN)
-     │   ├── notifier.php                   → Envoi des alertes et sauvegarde des rapports (FR) / Alert email sender and report saver (EN)
-     │   ├── state.json                     → État actuel et précédent (FR) / Current and previous state (EN)
-     │   ├── facturx_builder.php            → Générateur XML Factur-X utilisé pour l'analyse (FR) / Factur-X XML generator used for analysis (EN)
-     │   ├── mail.php                       → Fonction d'envoi des emails avec pièces jointes (FR) / Email sending function with attachments (EN)
+     │   ├── monitor.py                      → Script principal (FR) / Main monitoring script (EN)
+     │   ├── xsd_analyzer.py                 → Analyse du Changelog_XSD.md (FR) / Changelog_XSD.md analyzer (EN)
+     │   ├── pdf_analyzer.py                 → Analyse comparative des PDF Chorus Pro (FR) / Chorus Pro PDF comparison analyzer (EN)
+     │   ├── notifier.php                    → Envoi des alertes et sauvegarde des rapports (FR) / Alert email sender and report saver (EN)
+     │   ├── state.json                      → État actuel et précédent (FR) / Current and previous state (EN)
+     │   ├── facturx_builder.php             → Générateur XML Factur-X utilisé pour l'analyse (FR) / Factur-X XML generator used for analysis (EN)
+     │   ├── mail.php                        → Fonction d'envoi des emails avec pièces jointes (FR) / Email sending function with attachments (EN)
      │   │
-     │   ├── downloads/                     → ZIP téléchargés (FR) / Downloaded ZIP archives (EN)
-     │   ├── temp/                          → ZIP extraits (FR) / Extracted ZIP archives (EN)
+     │   ├── downloads/                      → ZIP téléchargés (FR) / Downloaded ZIP archives (EN)
+     │   ├── temp/                           → ZIP extraits (FR) / Extracted ZIP archives (EN)
      │   │   ├── v{N}/
      │   │   └── v{N-1}/
      │   │
-     │   └── reports/                       → Rapports texte (FR) / Text reports (EN)
+     │   └── reports/                        → Rapports texte (FR) / Text reports (EN)
      │
      ├── carburants/
      │   │
-     │   ├── data-carburants/               → Rapports texte (FR) / Text reports (EN)
-     │   └── radar-carburants/              → Collecte des données carburants (FR) / Fuel data collection (EN)
-     │       └── data-collect.php           → Collecteur quotidien (FR) / Daily data collector (EN)
+     │   ├── data-carburants/                → Rapports texte (FR) / Text reports (EN)
+     │   └── radar-carburants/               → Collecte des données carburants (FR) / Fuel data collection (EN)
+     │       └── data-collect.php            → Collecteur quotidien (FR) / Daily data collector (EN)
      │
      └── docs/
-         ├── VUE_D_ENSEMBLE.md              → Vue d’ensemble du système (FR)
-         ├── OVERVIEW.md                    → System Overview (EN)
-         ├── FACTURATION.md                 → Gestion de la facturation (FR)
-         ├── INVOICES.md                    → Billing Management (EN)
-         ├── PROJECT-OVERVIEW_FR.md         → Vue d’ensemble du projet (FR)
-         ├── PROJECT-OVERVIEW.md            → Project Overview (EN)
-         ├── README_FR.md                   → Présentation générale (FR)
-         └── README.md                      → General Overview (EN)
+         ├── VUE_D_ENSEMBLE.md               → Vue d’ensemble du système (FR)
+         ├── OVERVIEW.md                     → System Overview (EN)
+         ├── FACTURATION.md                  → Gestion de la facturation (FR)
+         ├── INVOICES.md                     → Billing Management (EN)
+         ├── PROJECT-OVERVIEW_FR.md          → Vue d’ensemble du projet (FR)
+         ├── PROJECT-OVERVIEW.md             → Project Overview (EN)
+         ├── README_FR.md                    → Présentation générale (FR)
+         └── README.md                       → General Overview (EN)
 ```
 
 ```
