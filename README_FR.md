@@ -19,7 +19,7 @@
   </a>
 </p>
 
-# Palks Studio — Site public et systèmes techniques
+# Palks Studio : Site public et systèmes techniques
 
 > Ce dépôt constitue une présentation technique et une documentation du projet.  
 > Il ne contient pas de code source téléchargeable ni de fichiers de production.
