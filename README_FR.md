@@ -141,7 +141,12 @@ L’accent est mis sur :
 │    │
 │    ├── carburants/
 │    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
-│    └── fuel/
+│    ├── fuel/
+│    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
+│    │
+│    ├── cyber-en/
+│    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
+│    └── cyber-fr/
 │        └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
 │
 └── private/
