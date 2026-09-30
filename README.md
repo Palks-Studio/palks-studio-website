@@ -144,9 +144,14 @@ The emphasis is placed on:
 │    ├── fuel/
 │    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
 │    │
+│    ├── cyber-fr/
+│    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
 │    ├── cyber-en/
 │    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
-│    └── cyber-fr/
+│    │
+│    ├── energie/
+│    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
+│    └── energy/
 │        └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
 │
 └── private/
@@ -203,10 +208,16 @@ The emphasis is placed on:
      │   └── reports/                        → Rapports texte (FR) / Text reports (EN)
      │
      ├── carburants/
-     │   │
      │   ├── data-carburants/                → Rapports texte (FR) / Text reports (EN)
-     │   └── radar-carburants/               → Collecte des données carburants (FR) / Fuel data collection (EN)
-     │       └── data-collect.php            → Collecteur quotidien (FR) / Daily data collector (EN)
+     │   └── data-collect.php                → Collecteur quotidien (FR) / Daily data collector (EN)
+     │
+     ├── cyber/
+     │   ├── data-cyber/                     → Rapports texte (FR) / Text reports (EN)
+     │   └── data-collect.php                → Collecteur quotidien (FR) / Daily data collector (EN)
+     │
+     ├── energie/
+     │   ├── data-energie/                   → Rapports texte (FR) / Text reports (EN)
+     │   └── data-collect.php                → Collecteur quotidien (FR) / Daily data collector (EN)
      │
      └── docs/
          ├── VUE_D_ENSEMBLE.md               → Vue d’ensemble du système (FR)
