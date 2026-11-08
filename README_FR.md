@@ -85,10 +85,21 @@ L’accent est mis sur :
 ```
 /palks-studio-website/
 │
+├── chatbot.com/
+│    │
+│    ├── data/                               → Base de connaissances du chatbot (FR) / Chatbot knowledge base (EN)
+│    ├── chatbot.php                         → Point d'entrée PHP entre le site et le chatbot (FR) / PHP entry point between the website and chatbot (EN)
+│    ├── chatbot.py                          → Lanceur et interface Python du chatbot (FR) / Chatbot Python launcher and interface (EN)
+│    ├── chatbot-fr.html                     → Page de démonstration française (FR) / French demo page (EN)
+│    ├── chatbot-en.html                     → Page de démonstration anglaise (FR) / English demo page (EN)
+│    ├── engine.py                           → Logique principale, correspondances et réponses de secours (FR) / Main logic, matching and fallback responses (EN)
+│    ├── storage.py                          → Gestion du stockage local (FR) / Local storage management (EN)
+│    └── widget.html                         → Interface du widget chatbot intégrable (FR) / Embeddable chatbot widget interface (EN)
+│
 ├── web/
 │    │
-│    ├── fr/                                 → Pages du site (FR) / Website pages (EN)
-│    ├── en/                                 → Pages du site (FR) / Website pages (EN)
+│    ├── fr/                                 → Pages du site en français (FR) / French website pages (EN)
+│    ├── en/                                 → Pages du site en anglais (FR) / English website pages (EN)
 │    │
 │    ├── processing/
 │    │   ├── document-orchestrator.php       → Orchestrateur de génération Factur-X (FR) / Factur-X generation orchestrator (EN)
@@ -100,21 +111,14 @@ L’accent est mis sur :
 │    ├── assets/
 │    │   ├── brand/                          → Identité visuelle Palks Studio pour facturation (FR) / Palks Studio brand identity for invoicing (EN)
 │    │   ├── media/                          → Médias et contenus de démonstration (FR) / Media and demonstration content (EN)
-│    │   ├── lib/
-│    │   │   └── pdf-client.min.js           → Bibliothèque JavaScript de génération de devis PDF (FR) / JavaScript library for PDF quote generation (EN)
+│    │   ├── lib/                            → Bibliothèque JavaScript de génération de devis PDF (FR) / JavaScript library for PDF quote generation (EN)
 │    │   │
-│    │   ├── styles/
-│    │   │   ├── main.css                    → Feuille de styles globale (FR) / Global stylesheet (EN)
-│    │   │   └── ui.css                      → Feuille de styles interactive (FR) / Interactive stylesheet (EN)
+│    │   ├── styles/                         → Feuille de styles globale (FR) / Global stylesheet (EN)
+│    │   │                                   → Feuille de styles interactive (FR) / Interactive stylesheet (EN)
 │    │   │
 │    │   └── images/                         → Images et visuels (FR) / Images and visuals (EN)
-│    │       ├── content/                    → Images des articles (FR) / Article images (EN)
-│    │       ├── fav/                        → Favicons (FR) / Favicons (EN)
-│    │       ├── vectors/                    → Icônes SVG (FR) / SVG icons (EN)
-│    │       └── technical/                  → Images des notes techniques (FR) / Technical notes images (EN)
 │    │
-│    ├── batch-downloads/
-│    │   └── batch-download-access.php       → Point d'accès aux téléchargements batch (FR) / Batch download access endpoint (EN)
+│    ├── batch-downloads/                    → Point d'accès aux téléchargements batch (FR) / Batch download access endpoint (EN)
 │    │
 │    ├── documentation/                      → Documents légaux en consultation libre (FR) / Legal documents available for free consultation (EN)
 │    ├── store/                              → Fichiers produits numériques (FR) / Digital product files (EN)
@@ -134,44 +138,30 @@ L’accent est mis sur :
 │    │   ├── payment-cancel.html             → Page d’annulation de paiement (FR)/ Payment cancellation page (EN)
 │    │   └── payment-success.html            → Page de paiement validé (FR) / Payment success page (EN)
 │    │
-│    ├── payment-provider/
-│    │   ├── checkout-session.php            → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
-│    │   ├── payment.php                     → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
-│    │   └── secure-download.php             → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
+│    ├── payment-provider/                   → Initialisation d’une session de paiement (FR) / Checkout session initialization (EN)
+│    │                                       → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
+│    │                                       → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
 │    │
-│    ├── carburants/
-│    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
-│    ├── fuel/
-│    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
-│    │
-│    ├── cyber-fr/
-│    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
-│    ├── cyber-en/
-│    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
-│    │
-│    ├── energie/
-│    │   └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
-│    └── energy/
-│        └── index.php                       → Interface du radar (FR) / Fuel radar interface (EN)
+│    ├── carburants/                         → Interface du radar (FR) / Radar interface (EN)
+│    ├── fuel/                               → Interface du radar (FR) / Radar interface (EN)
+│    ├── cyber-fr/                           → Interface du radar (FR) / Radar interface (EN)
+│    ├── cyber-en/                           → Interface du radar (FR) / Radar interface (EN)
+│    ├── energie/                            → Interface du radar (FR) / Radar interface (EN)
+│    └── energy/                             → Interface du radar (FR) / Radar interface (EN)
 │
-└── private/
+└── systems/
      ├── transactional-mailer.php            → Envoi d’e-mails transactionnels (FR) / Transactional email delivery (EN)
      ├── system-config.php                   → Configuration centralisée des chemins et variables système (FR) / Centralized system paths and variables configuration (EN)
      ├── rate-limit-storage.json             → Stockage des limitations de requêtes IP (FR) / IP request rate limit storage (EN)
      │
-     ├── config/
-     │   └── download-config.php             → Configuration centrale des téléchargements (FR) / Central download configuration (EN)
+     ├── config/                             → Configuration centrale des téléchargements (FR) / Central download configuration (EN)
      │
-     ├── cron-task/
-     │   └── cleanup-expired-data.php        → Nettoyage automatique des journaux et fichiers expirés (FR) / Automatic cleanup of logs and expired files (EN)
+     ├── cron-task/                          → Nettoyage automatique des journaux et fichiers expirés (FR) / Automatic cleanup of logs and expired files (EN)
      │
-     ├── tokens/
-     │   ├── download-activity.log           → Journal des téléchargements réels (FR) / Download activity log (EN)
-     │   └── download-tokens.json            → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
-     │
+     ├── tokens/                             → Journal des téléchargements réels (FR) / Download activity log (EN)
+     │                                       → Stockage des tokens de téléchargement (FR) / Download token storage (EN)
      ├── product/
-     │   ├── templates/
-     │   │    └── template.php               → Modèle HTML de facture (FR) / Billing HTML template (EN)
+     │   ├── templates/                      → Modèle HTML de facture (FR) / Billing HTML template (EN)
      │   │
      │   ├── billing-documents/              → Factures PDF générées (FR) / Generated billing PDF documents (EN)
      │   ├── billing-counter.json            → Compteur persistant de factures (FR) / Persistent billing counter (EN)
@@ -202,22 +192,16 @@ L’accent est mis sur :
      │   │
      │   ├── downloads/                      → ZIP téléchargés (FR) / Downloaded ZIP archives (EN)
      │   ├── temp/                           → ZIP extraits (FR) / Extracted ZIP archives (EN)
-     │   │   ├── v{N}/
-     │   │   └── v{N-1}/
-     │   │
      │   └── reports/                        → Rapports texte (FR) / Text reports (EN)
      │
-     ├── carburants/
-     │   ├── data-carburants/                → Rapports texte (FR) / Text reports (EN)
-     │   └── data-collect.php                → Collecteur quotidien (FR) / Daily data collector (EN)
+     ├── carburants/                         → Rapports texte (FR) / Text reports (EN)
+     │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
      │
-     ├── cyber/
-     │   ├── data-cyber/                     → Rapports texte (FR) / Text reports (EN)
-     │   └── data-collect.php                → Collecteur quotidien (FR) / Daily data collector (EN)
+     ├── cyber/                              → Rapports texte (FR) / Text reports (EN)
+     │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
      │
-     ├── energie/
-     │   ├── data-energie/                   → Rapports texte (FR) / Text reports (EN)
-     │   └── data-collect.php                → Collecteur quotidien (FR) / Daily data collector (EN)
+     ├── energie/                            → Rapports texte (FR) / Text reports (EN)
+     │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
      │
      └── docs/
          ├── VUE_D_ENSEMBLE.md               → Vue d’ensemble du système (FR)
@@ -228,21 +212,6 @@ L’accent est mis sur :
          ├── PROJECT-OVERVIEW.md             → Project Overview (EN)
          ├── README_FR.md                    → Présentation générale (FR)
          └── README.md                       → General Overview (EN)
-```
-
-```
-chatbot.com
-│
-├── data/
-│   └── knowledge_base.json  → Base de connaissances FR / EN du chatbot
-│
-├── chatbot.php              → Point d'entrée PHP entre le site et le chatbot
-├── chatbot.py               → Lancement / interface Python du chatbot
-├── demo-en.html             → Page de démonstration anglaise
-├── demo-fr.html             → Page de démonstration française
-├── engine.py                → Logique principale, matching, fallbacks et réponses
-├── storage.py               → Gestion du stockage local
-└── widget.html              → Interface du widget chatbot intégrable
 ```
 
 ---
