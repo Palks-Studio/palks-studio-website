@@ -12,6 +12,7 @@
 ![Bilingual](https://img.shields.io/badge/Lang-FR%20%2F%20EN-0a5645?style=flat)
 [![YouTube](https://img.shields.io/badge/YouTube-@Palks__Studio-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@Palks_Studio)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-@Palks__Studio-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palks-studio/)
+[![DEV.to](https://img.shields.io/badge/DEV.to-Technical%20Article-7C3AED?style=flat&logo=devdotto&logoColor=white)](https://dev.to/palks_studio/static-websites-dont-limit-features-they-redefine-where-complexity-lives-37kh)
 
 <p align="center">
   <a href="https://palks-studio.com">
@@ -58,6 +59,10 @@ Sensitive elements, secrets, production paths, private data, and internal compon
 This repository is not a turnkey product, framework, or software library.
 
 It serves as a reference for understanding the approach, architecture, tools, and technical choices behind Palks Studio.
+
+For a closer look at the technical architecture, this article explores the design choices behind Palks Studio and explains how a primarily static website can integrate complex business systems without a CMS or unnecessary dependencies.
+
+👉 [Static Websites Don't Limit Features. They Redefine Where Complexity Lives](https://dev.to/palks_studio/static-websites-dont-limit-features-they-redefine-where-complexity-lives-37kh) (DEV.to)
 
 ---
 
