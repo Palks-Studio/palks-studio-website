@@ -12,6 +12,8 @@
 ![Bilingual](https://img.shields.io/badge/Lang-FR%20%2F%20EN-0a5645?style=flat)
 [![YouTube](https://img.shields.io/badge/YouTube-@Palks__Studio-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@Palks_Studio)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-@Palks__Studio-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palks-studio/)
+[![DEV.to](https://img.shields.io/badge/DEV.to-Technical%20Article-7C3AED?style=flat&logo=devdotto&logoColor=white)](https://dev.to/palks_studio/static-websites-dont-limit-features-they-redefine-where-complexity-lives-37kh)
+[![DEV.to](https://img.shields.io/badge/DEV.to-Technical%20Article-7C3AED?style=flat&logo=devdotto&logoColor=white)](https://dev.to/palks_studio/static-websites-dont-limit-features-they-redefine-where-complexity-lives-37kh)
 
 <p align="center">
   <a href="https://palks-studio.com">
@@ -58,6 +60,10 @@ Les éléments sensibles, secrets, chemins de production, données privées et c
 Ce dépôt n’est pas un produit clé en main, ni un framework, ni une bibliothèque logicielle.
 
 Il constitue un support de référence permettant de comprendre la démarche, l’architecture, les outils et les choix techniques portés par Palks Studio.
+
+Pour aller plus loin, un article technique présente les choix d'architecture de Palks Studio et explique comment un site principalement statique peut intégrer des systèmes métier complexes, sans CMS ni dépendances inutiles.
+
+👉 [Static Websites Don't Limit Features. They Redefine Where Complexity Lives](https://dev.to/palks_studio/static-websites-dont-limit-features-they-redefine-where-complexity-lives-37kh) (DEV.to, en anglais)
 
 ---
 
