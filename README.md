@@ -147,6 +147,10 @@ The emphasis is placed on:
 │    │                                       → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
 │    │                                       → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
 │    │
+│    ├── digital-infrastructure/             → Interface du radar (FR) / Radar interface (EN)
+│    ├── infrastructures-numeriques/         → Interface du radar (FR) / Radar interface (EN)
+│    ├── maritime-traffic/                   → Interface du radar (FR) / Radar interface (EN)
+│    ├── flux-maritimes/                     → Interface du radar (FR) / Radar interface (EN)
 │    ├── carburants/                         → Interface du radar (FR) / Radar interface (EN)
 │    ├── fuel/                               → Interface du radar (FR) / Radar interface (EN)
 │    ├── cyber-fr/                           → Interface du radar (FR) / Radar interface (EN)
@@ -206,6 +210,12 @@ The emphasis is placed on:
      │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
      │
      ├── energie/                            → Rapports texte (FR) / Text reports (EN)
+     │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
+     │
+     ├── flux-maritimes/                     → Rapports texte (FR) / Text reports (EN)
+     │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
+     │
+     ├── infrastructures-numeriques/         → Rapports texte (FR) / Text reports (EN)
      │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
      │
      └── docs/
@@ -269,9 +279,9 @@ The project relies on several specialized components:
 - a publicly accessible Factur-X generator / demo  
 - an internal PDF / Factur-X invoice generation engine  
 - an automated invoicing system triggered by payment  
-- a batch processing system for grouped operations  
+- a previously developed batch processing system for grouped operations, retained for documentation purposes  
 - a technical watcher monitoring Factur-X-related changes  
-- a public-data monitoring tool with SQLite historical storage  
+- monitoring radars based on public data and historical SQLite datasets: cybersecurity, fuel prices, energy, maritime traffic, and digital infrastructure  
 - interactive experiences, visualizations, and simulations available through the website
 
 These components remain separate in order to preserve a modular architecture, limit dependencies, and simplify maintenance.
@@ -296,7 +306,7 @@ The public website includes:
 
 A free bilingual PDF quote generator is available directly on the website.
 
-It runs entirely client-side (JavaScript + jsPDF) and does not transmit any data to a server. It can be used to create professional quotes with multiple service lines, automatic subtotal / VAT / total calculations, and direct PDF export.
+It runs entirely client-side (JavaScript + jsPDF), and no quote data is transmitted to the server. It can be used to create professional quotes with multiple service lines, automatic subtotal / VAT / total calculations, and direct PDF export.
 
 The generator is completely independent from the invoicing pipeline
 (Payment → Confirmation → Invoice → Token → Download) and does not create transactions or server-side archives.
