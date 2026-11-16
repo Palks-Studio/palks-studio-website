@@ -13,7 +13,6 @@
 [![YouTube](https://img.shields.io/badge/YouTube-@Palks__Studio-FF0000?style=flat&logo=youtube&logoColor=white)](https://www.youtube.com/@Palks_Studio)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-@Palks__Studio-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/palks-studio/)
 [![DEV.to](https://img.shields.io/badge/DEV.to-Technical%20Article-7C3AED?style=flat&logo=devdotto&logoColor=white)](https://dev.to/palks_studio/static-websites-dont-limit-features-they-redefine-where-complexity-lives-37kh)
-[![DEV.to](https://img.shields.io/badge/DEV.to-Technical%20Article-7C3AED?style=flat&logo=devdotto&logoColor=white)](https://dev.to/palks_studio/static-websites-dont-limit-features-they-redefine-where-complexity-lives-37kh)
 
 <p align="center">
   <a href="https://palks-studio.com">
@@ -148,6 +147,10 @@ L’accent est mis sur :
 │    │                                       → Traitement post-paiement (FR) / Post-payment fulfillment handler (EN)
 │    │                                       → Point d’accès sécurisé aux fichiers (FR) / Secure file access endpoint (EN)
 │    │
+│    ├── digital-infrastructure/             → Interface du radar (FR) / Radar interface (EN)
+│    ├── infrastructures-numeriques/         → Interface du radar (FR) / Radar interface (EN)
+│    ├── maritime-traffic/                   → Interface du radar (FR) / Radar interface (EN)
+│    ├── flux-maritimes/                     → Interface du radar (FR) / Radar interface (EN)
 │    ├── carburants/                         → Interface du radar (FR) / Radar interface (EN)
 │    ├── fuel/                               → Interface du radar (FR) / Radar interface (EN)
 │    ├── cyber-fr/                           → Interface du radar (FR) / Radar interface (EN)
@@ -207,6 +210,12 @@ L’accent est mis sur :
      │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
      │
      ├── energie/                            → Rapports texte (FR) / Text reports (EN)
+     │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
+     │
+     ├── flux-maritimes/                     → Rapports texte (FR) / Text reports (EN)
+     │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
+     │
+     ├── infrastructures-numeriques/         → Rapports texte (FR) / Text reports (EN)
      │                                       → Collecteur quotidien (FR) / Daily data collector (EN)
      │
      └── docs/
@@ -270,9 +279,9 @@ Le projet s’appuie sur plusieurs briques spécialisées :
 - un générateur / démonstrateur Factur-X accessible publiquement  
 - un moteur interne de génération de factures PDF / Factur-X  
 - un système de facturation automatisée déclenché par paiement  
-- un système de traitement batch pour les opérations groupées  
+- un système de traitement batch pour les opérations groupées, développé précédemment et conservé à titre documentaire  
 - un watcher technique chargé de surveiller les évolutions liées à Factur-X  
-- un outil de suivi basé sur des données publiques et un historique SQLite  
+- des radars de suivi fondés sur des données publiques et des historiques SQLite : cyber, carburants, énergie, flux maritimes et infrastructures numériques  
 - des expériences interactives, visualisations et simulations accessibles depuis le site
 
 Ces composants sont séparés afin de conserver une architecture modulaire, limiter les dépendances et faciliter la maintenance.
@@ -297,7 +306,7 @@ Le site public présente notamment :
 
 Un générateur de devis PDF gratuit et bilingue est disponible directement sur le site.
 
-Il fonctionne entièrement côté client (JavaScript + jsPDF) et ne transmet aucune donnée à un serveur. Il permet de créer des devis professionnels avec plusieurs lignes de prestations, calcul automatique HT / TVA / TTC et export direct en PDF.
+Il fonctionne entièrement côté client (JavaScript + jsPDF) et aucune donnée du devis n’est transmise au serveur. Il permet de créer des devis professionnels avec plusieurs lignes de prestations, calcul automatique HT / TVA / TTC et export direct en PDF.
 
 Le générateur est totalement indépendant du pipeline de facturation
 (Paiement → Confirmation → Facture → Token → Téléchargement) et ne crée aucune transaction ni archive côté serveur.
